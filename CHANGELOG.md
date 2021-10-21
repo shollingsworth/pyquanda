@@ -1,6 +1,11 @@
+# v1.0.8
+#### turned off suppress output so the ansible run boot process can be watched
+> 2021-10-21 06:40 UTC [HEAD](https://github.com/shollingsworth/pyquanda/commit/HEAD)
+
+---
 # v1.0.7
 #### Various bugfixes after testing
-> 2021-10-21 06:30 UTC [HEAD](https://github.com/shollingsworth/pyquanda/commit/HEAD)
+> 2021-10-21 06:30 UTC [737716e](https://github.com/shollingsworth/pyquanda/commit/737716e8b9ad1a8524dcbf3ee2b78aec7c998870)
 
 #### forgot a dunder
 > 2021-10-21 05:32 UTC [01316b6](https://github.com/shollingsworth/pyquanda/commit/01316b66e870a24d38f5cce13055828c2e110325)

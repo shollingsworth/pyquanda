@@ -3,10 +3,8 @@
 """Main Ansible Module Builder."""
 # pylint: disable=unused-argument
 
-import json
 import os
 import shutil
-import sys
 import tempfile
 from pathlib import Path
 from typing import Dict, List
@@ -28,6 +26,8 @@ _yaml = YAML()
 
 _BASE = Path(__file__).parent
 _SITE_YAML_FILE = _BASE.joinpath("site.yaml")
+
+SUPRESS_OUTPUT = False
 
 
 _HOSTS = """
@@ -85,7 +85,7 @@ class Ansible:
                 "status": "complete",
             }
             EMITTER.emit(HOOK_TYPE_ANSIBLE_RUNBOOK_COMPLETE, send_d)
-        print(f"runbook status:{status}, name:{self.name}")
+        # print(f"runbook status:{status}, name:{self.name}")
 
     def event_handler(self, evt_dct: Dict):
         """event_handler.
@@ -110,12 +110,13 @@ class Ansible:
             "res": res,
         }
         EMITTER.emit(HOOK_TYPE_ANSIBLE_EVENT, send_d)
-        if evt == "runner_on_failed":
-            print(
-                "event",
-                json.dumps(evt_dct, indent=4, separators=(",", " : ")),
-                file=sys.stderr,
-            )
+        # print(f"{evt}", file=sys.stdout)
+        #  if evt == "runner_on_failed":
+        #      print(
+        #          "event",
+        #          json.dumps(evt_dct, indent=4, separators=(",", " : ")),
+        #          file=sys.stderr,
+        #      )
 
     @classmethod
     def copy_dirs(cls) -> List[str]:
@@ -196,7 +197,7 @@ class Ansible:
                 event_handler=self.event_handler,
                 status_handler=self.status_handler,
                 settings={
-                    "suppress_ansible_output": True,
+                    "suppress_ansible_output": SUPRESS_OUTPUT,
                 },
                 inventory=inv,
                 playbook=str(pb_file),

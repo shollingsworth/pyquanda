@@ -10,6 +10,7 @@ Main Ansible Module Builder.
 - **ansible_runner**
 - **HOOK_TYPE_ANSIBLE_EVENT**
 - **HOOK_TYPE_ANSIBLE_RUNBOOK_COMPLETE**
+- **SUPRESS_OUTPUT**
 - **EVENT_FAILURE**
 - **EVENT_OK**
 - **EVENT_RUNBOOK_DONE**
@@ -48,7 +49,7 @@ __init__.
 
 ---
 
-<a href="../src/pyquanda/ansible/__init__.py#L120"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../src/pyquanda/ansible/__init__.py#L121"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ### <kbd>classmethod</kbd> `copy_dirs`
 
@@ -89,7 +90,7 @@ event_handler.
 
 ---
 
-<a href="../src/pyquanda/ansible/__init__.py#L169"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../src/pyquanda/ansible/__init__.py#L170"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ### <kbd>method</kbd> `run`
 
