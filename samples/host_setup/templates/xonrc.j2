@@ -1,9 +1,7 @@
 #!/usr/bin/env xonsh
 # -*- coding: utf-8 -*-
 import os
+os.environ['PAGER'] = 'less -r'
 $XONSH_STORE_STDOUT = True
-{% for k, v in env_exports.items() %}
-${{k}}="{{v}}"
-{% endfor %}
 from pyquanda.host.xonsh import QuestionPrompt
 QuestionPrompt()

@@ -11,3 +11,4 @@ ansible==4.7.0
 ansible-runner==2.0.2
 validators==0.18.2
 pymitter==0.3.1
+requests==2.26.0

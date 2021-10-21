@@ -83,9 +83,9 @@ optional arguments:
                         source module directory
 
 ```
-## qsave
+## q_save
 ```
-usage: gendoc.py qsave [-h] -s SRC_MODULE_DIR [--destination_directory DESTINATION_DIRECTORY]
+usage: gendoc.py q_save [-h] -s SRC_MODULE_DIR [--destination_directory DESTINATION_DIRECTORY]
 
 convert questions to pyquanda questions config file
 
@@ -97,9 +97,9 @@ optional arguments:
                         src_module_dir help
 
 ```
-## qtest
+## q_test
 ```
-usage: gendoc.py qtest [-h] -s SRC_MODULE_DIR [--keep_state]
+usage: gendoc.py q_test [-h] -s SRC_MODULE_DIR [--keep_state]
 
 test question set
 

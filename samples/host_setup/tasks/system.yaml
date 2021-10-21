@@ -1,8 +1,12 @@
 - name: write env vars
-  template:
-    src: env.j2
-    dest: /etc/profile.d/interview.sh
-    mode: 0644
+  with_items:
+    - 'PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"'
+    - 'PAGER="less -r"'
+    - "export PAGER"
+    - "export PATH"
+  lineinfile:
+    path: /etc/bashrc
+    line: "{{ item }}"
 
 - name: hostname
   hostname:

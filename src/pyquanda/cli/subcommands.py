@@ -175,7 +175,7 @@ class AssembleQuestions:
         """
         super().__init__()
         _pwrap = parent.add_subcommand(
-            "qsave",
+            "q_save",
             "convert questions to pyquanda questions config file",
             self.run,
         )
@@ -215,7 +215,7 @@ class TestQuestions:
             None:
         """
         _pwrap = parent.add_subcommand(
-            "qtest",
+            "q_test",
             "test question set",
             self.run,
         )

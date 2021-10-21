@@ -5,7 +5,6 @@
 ## Modules
 
 - [`ansible`](./ansible.md#module-ansible): Main Ansible Module Builder.
-- [`ansible.playbook`](./ansible.playbook.md#module-ansibleplaybook): Main Ansible Module Builder.
 - [`cli`](./cli.md#module-cli): common cli attributes.
 - [`cli.subcommands`](./cli.subcommands.md#module-clisubcommands): cli subcommands.
 - [`cli.templates`](./cli.templates.md#module-clitemplates): Templates for creating new modules.
@@ -13,6 +12,9 @@
 - [`exceptions`](./exceptions.md#module-exceptions): Exceptions for application.
 - [`hooks`](./hooks.md#module-hooks): base classes for hooks module.
 - [`hooks.config`](./hooks.config.md#module-hooksconfig): constants for module.
+- [`hooks.dest_types`](./hooks.dest_types.md#module-hooksdest_types)
+- [`hooks.dest_types.executable`](./hooks.dest_types.executable.md#module-hooksdest_typesexecutable): Executable type.
+- [`hooks.dest_types.webhook_no_auth`](./hooks.dest_types.webhook_no_auth.md#module-hooksdest_typeswebhook_no_auth): Executable type.
 - [`hooks.registry`](./hooks.registry.md#module-hooksregistry): response hook registry
 - [`host`](./host.md#module-host)
 - [`host.config`](./host.config.md#module-hostconfig): Abstract method for other modules.
@@ -29,7 +31,6 @@
 ## Classes
 
 - [`ansible.Ansible`](./ansible.md#class-ansible): Ansible.
-- [`playbook.Ansible`](./ansible.playbook.md#class-ansible): Ansible.
 - [`cli.MainParser`](./cli.md#class-mainparser): MainParser.
 - [`cli.ParserWrap`](./cli.md#class-parserwrap): ParserWrap.
 - [`subcommands.AssembleQuestions`](./cli.subcommands.md#class-assemblequestions): AssembleQuestions.
@@ -44,6 +45,8 @@
 - [`exceptions.ErrorBadConfig`](./exceptions.md#class-errorbadconfig): Throw if the main configuration is bad.
 - [`exceptions.PreCheckFail`](./exceptions.md#class-precheckfail): Throw if Terraform precheck fails.
 - [`hooks.Hook`](./hooks.md#class-hook): BaseHookType.
+- [`executable.ExecutableDest`](./hooks.dest_types.executable.md#class-executabledest): ExecutableDest.
+- [`webhook_no_auth.WebHookNoAuth`](./hooks.dest_types.webhook_no_auth.md#class-webhooknoauth): WebHookNoAuth.
 - [`registry.HookLoader`](./hooks.registry.md#class-hookloader): Loader.
 - [`config.Status`](./host.config.md#class-status): Status.
 - [`intro.Intro`](./host.intro.md#class-intro): Intro.

@@ -17,12 +17,12 @@ Main Ansible Module Builder.
 
 ---
 
-<a href="../src/pyquanda/ansible/__init__.py#L42"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../src/pyquanda/ansible/__init__.py#L43"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>class</kbd> `Ansible`
 Ansible. 
 
-<a href="../src/pyquanda/ansible/__init__.py#L54"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../src/pyquanda/ansible/__init__.py#L55"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ### <kbd>method</kbd> `__init__`
 
@@ -48,7 +48,7 @@ __init__.
 
 ---
 
-<a href="../src/pyquanda/ansible/__init__.py#L114"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../src/pyquanda/ansible/__init__.py#L120"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ### <kbd>classmethod</kbd> `copy_dirs`
 
@@ -71,7 +71,7 @@ copy_dirs.
 
 ---
 
-<a href="../src/pyquanda/ansible/__init__.py#L89"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../src/pyquanda/ansible/__init__.py#L90"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ### <kbd>method</kbd> `event_handler`
 
@@ -89,7 +89,7 @@ event_handler.
 
 ---
 
-<a href="../src/pyquanda/ansible/__init__.py#L163"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../src/pyquanda/ansible/__init__.py#L169"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ### <kbd>method</kbd> `run`
 
@@ -101,7 +101,7 @@ run.
 
 ---
 
-<a href="../src/pyquanda/ansible/__init__.py#L71"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../src/pyquanda/ansible/__init__.py#L72"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ### <kbd>method</kbd> `status_handler`
 

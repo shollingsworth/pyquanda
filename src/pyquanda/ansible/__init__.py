@@ -6,6 +6,7 @@
 import json
 import os
 import shutil
+import sys
 import tempfile
 from pathlib import Path
 from typing import Dict, List
@@ -26,7 +27,7 @@ _POP_KEYS = ["env", "ansible_facts"]
 _yaml = YAML()
 
 _BASE = Path(__file__).parent
-_SITE_YAML_FILE = _BASE.joinpath("playbook/site.yaml")
+_SITE_YAML_FILE = _BASE.joinpath("site.yaml")
 
 
 _HOSTS = """
@@ -42,7 +43,7 @@ EVENT_RUNBOOK_DONE = "successful"
 class Ansible:
     """Ansible."""
 
-    DIR_HANDLER = "handler"
+    DIR_HANDLER = "handlers"
     DIR_TASKS = "tasks"
     DIR_TEMPLATE = "templates"
 
@@ -109,7 +110,12 @@ class Ansible:
             "res": res,
         }
         EMITTER.emit(HOOK_TYPE_ANSIBLE_EVENT, send_d)
-        print("event", json.dumps(evt_dct, indent=4, separators=(",", " : ")))
+        if evt == "runner_on_failed":
+            print(
+                "event",
+                json.dumps(evt_dct, indent=4, separators=(",", " : ")),
+                file=sys.stderr,
+            )
 
     @classmethod
     def copy_dirs(cls) -> List[str]:

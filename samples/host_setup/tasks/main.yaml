@@ -1,7 +1,3 @@
-- name: get vars
-  include_vars:
-    file: ../vars.yaml
-
 - name: Install packages
   yum:
     name:
