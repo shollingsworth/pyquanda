@@ -1,0 +1,4 @@
+---
+# here will be vars you want to expose to both the python runtime, and ansible
+# base_path: /var/games/cool/game/here
+# script_name: maximum_effort.py

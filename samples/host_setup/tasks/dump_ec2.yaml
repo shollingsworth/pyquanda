@@ -1,0 +1,39 @@
+---
+# This playbook contains common plays that will be run on all nodes.
+- name: pip
+  pip:
+    name: boto3
+    executable: pip3
+- name: ec2 metadata facts
+  ec2_metadata_facts:
+  ignore_errors: true
+  register: ec2_data
+
+- name: config data
+  slurp:
+    path: /tmp/interview.yaml
+  register: raw_conf
+
+- name: set mock vars
+  set_fact:
+    ansible_ec2_instance_id: i-xxxxxxxxxxxxxx
+    ansible_ec2_public_ipv4: 8.8.8.8
+    ansible_ec2_placement_region: the-moon
+  when: ec2_data.failed
+
+- name: merge data
+  set_fact:
+    merge_config:
+      instance_id: "{{ ansible_ec2_instance_id }}"
+      public_ip: "{{ ansible_ec2_public_ipv4 }}"
+      region: "{{ ansible_ec2_placement_region }}"
+
+- name: read yaml
+  set_fact:
+    config: "{{ raw_conf['content'] | b64decode | from_yaml }}"
+
+- name: merge data
+  copy:
+    dest: /tmp/interview.yaml
+    content: "{{ config | combine(merge_config) | to_nice_yaml }}"
+    mode: 0644

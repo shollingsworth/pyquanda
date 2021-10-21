@@ -1,0 +1,17 @@
+---
+- name: add xonsh
+  pip:
+    name:
+      - pyquanda
+    executable: pip3
+- name: add to shell env
+  lineinfile:
+    state: present
+    line: "/usr/local/bin/xonsh"
+    path: /etc/shells
+
+- name: lines in xonsh
+  template:
+    src: xonrc.j2
+    dest: /etc/xonshrc
+    mode: 0644

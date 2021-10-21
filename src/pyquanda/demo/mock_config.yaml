@@ -1,0 +1,15 @@
+---
+quanda_id: xxxxxxxxxxxxxxxx
+firstname: John
+lastname: Doe
+fqdn: demo.test.local
+# hooks:
+#   - dest_type: webhook_no_auth
+#     event_type: all
+#     config:
+#       url: http://localhost:8000
+#
+#   - dest_type: executable
+#     event_type: all
+#     config:
+#       path: /home/shollingsworth/bin/testhook.sh

@@ -1,0 +1,10 @@
+---
+type: problem
+description: Demo Question Module 2
+order: 40
+introduction:
+  - type: txt
+    content: Yet another intro module
+questions:
+  - Question 1
+  - Question 2

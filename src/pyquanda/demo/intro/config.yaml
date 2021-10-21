@@ -1,0 +1,103 @@
+---
+type: intro
+description: Interview Environment Introduction
+order: -1000
+introduction:
+  - type: header
+    content: "This is a demo"
+  - type: txt
+    content: "you can find these files in {{demo_path}}"
+
+  - type: header
+    content: Module Starts
+  - type: j2
+    content: welcome.j2
+
+  - type: header
+    content: The shell environment (xonsh)
+
+  - type: txt
+    content: |
+      The shell you'll be using is called [code]xonsh[/]([url]https://xon.sh/contents.html[/]) it's a little different, so here's a few tips before using it.
+      You may see errors that look like this.
+
+  - type: code
+    content:
+      type: python
+      value: err.j2
+
+  - type: txt
+    content: >
+      When that happens, its either a permissions issue, in which case you
+      can use [code]sudo[/], or it's likely related to differences between a "normal" shell like bash.
+
+  - type: table
+    content:
+      title: Here is a list of bash and xonsh equivalents
+      headers:
+        - bash command
+        - xonrc equivalent
+      row_map:
+        bash:
+          func: get_code
+          args:
+            type: python
+            value: __value__
+        xonsh:
+          func: get_code
+          args:
+            type: python
+            value: __value__
+      rows:
+        - bash: echo --arg="val"
+          xonsh: echo --arg "val"
+        - bash: echo {}
+          xonsh: echo "{}"
+        - bash: echo \;
+          xonsh: echo ";"
+        - bash: $NAME or ${NAME}
+          xonsh: $NAME
+        - bash: export NAME=Peter
+          xonsh: $NAME = 'Peter'
+        - bash: unset NAME
+          xonsh: del $NAME
+        - bash: echo "$HOME/hello"
+          xonsh: echo "$HOME/hello"
+        - bash: something/$SOME_VAR/$(some_command)
+          xonsh: "@('something/' + $SOME_VAR + $(some_command).strip())"
+        - bash: echo 'my home is $HOME'
+          xonsh: echo @("my home is $HOME")
+        - bash: ${!VAR}
+          xonsh: ${var or expr}
+        - bash: ENV1=VAL1 command
+          xonsh: "$ENV1=VAL1 command\nor with ${...}.swap(ENV1=VAL1): command"
+        - bash: alias ll='ls -la'
+          xonsh: aliases['ll'] = 'ls -la'
+        - bash: $(cmd args) or `cmd args`
+          xonsh: "@$(cmd args)"
+        - bash: v=`echo 1`
+          xonsh: v=$(echo 1)
+        - bash: echo -e "\033[0;31mRed text\033[0m"
+          xonsh: printx("{RED}Red text{RESET}")
+        - bash: shopt -s dotglob
+          xonsh: $DOTGLOB = True
+        - bash: if [ -f "$FILE" ];
+          xonsh: p'/path/to/file'.exists() or pf'{file}'.exists()
+        - bash: set -e
+          xonsh: $RAISE_SUBPROC_ERROR = True
+        - bash: set -x
+          xonsh: trace on and $XONSH_TRACE_SUBPROC = True
+        - bash: "&&"
+          xonsh: "&& or and"
+        - bash: "||"
+          xonsh: "|| as well as or"
+        - bash: $$
+          xonsh: os.getpid()
+        - bash: $?
+          xonsh: _.rtn
+        - bash: "!$"
+          xonsh: __xonsh__.history[-1, -1]
+        - bash: $<n>
+          xonsh: $ARG<n>
+        - bash: $@
+          xonsh: $ARGS

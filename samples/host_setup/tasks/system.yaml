@@ -1,0 +1,29 @@
+- name: write env vars
+  template:
+    src: env.j2
+    dest: /etc/profile.d/interview.sh
+    mode: 0644
+
+- name: hostname
+  hostname:
+    name: "{{ fqdn }}"
+
+- name: hosts file
+  template:
+    src: hosts.j2
+    dest: /etc/hosts
+    mode: 0644
+
+- name: Configure sshd
+  lineinfile:
+    path: "/etc/ssh/sshd_config"
+    regex: "^(#)?{{ item.key }}"
+    line: "{{ item.key }} {{ item.value }}"
+    state: present
+  loop:
+    - key: "PermitRootLogin"
+      value: "no"
+    - key: "PasswordAuthentication"
+      value: "yes"
+  notify:
+    - restart ssh

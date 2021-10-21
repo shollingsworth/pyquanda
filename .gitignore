@@ -1,0 +1,7 @@
+*.pyc
+dist/
+build/
+tmp/
+**/*.egg-info
+todo.txt
+test/

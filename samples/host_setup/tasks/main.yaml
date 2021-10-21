@@ -1,0 +1,39 @@
+- name: get vars
+  include_vars:
+    file: ../vars.yaml
+
+- name: Install packages
+  yum:
+    name:
+      - vim
+      - git
+      - wget
+      - nc
+      - screen
+      - net-tools
+      - jq
+      - python-virtualenv
+
+- name: Setup System
+  include_tasks:
+    file: ./system.yaml
+
+- name: Setup User
+  include_tasks:
+    file: ./usersetup.yaml
+
+- name: xonsh
+  include_tasks:
+    file: ./xonsh.yaml
+
+- name: Install ntp
+  include_tasks:
+    file: ./ntp.yaml
+
+- name: add restricted sudo
+  include_tasks:
+    file: ./restricted_sudo.yaml
+
+- name: ec2 info
+  include_tasks:
+    file: ./dump_ec2.yaml

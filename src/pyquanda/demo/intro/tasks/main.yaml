@@ -1,0 +1,6 @@
+---
+# - name: Install packages
+#   yum:
+#     name:
+#       - vim
+#       - git

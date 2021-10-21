@@ -1,0 +1,8 @@
+{
+   "extraPaths": [
+      "src",
+      "../freeplane_tools/src"
+   ],
+   "venv": "3.8.9/envs/interview_env",
+   "venvPath": "/home/shollingsworth/.pyenv/versions"
+}

@@ -1,0 +1,3 @@
+---
+env_exports:
+  PAGER: less -r

@@ -1,0 +1,13 @@
+include VERSION
+include README.md
+include .pypyreadme
+include requirements.txt
+global-exclude *.pyc
+global-include *.json
+global-include *.yaml
+global-include *.yml
+global-include *.template
+global-include *.j2
+global-include *.cfg
+global-include Vagrantfile
+global-include hosts

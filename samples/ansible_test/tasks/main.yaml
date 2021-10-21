@@ -1,0 +1,10 @@
+---
+- name: test
+  command: uptime
+  changed_when: false
+# - name: test failed yum
+#   yum:
+#     name: xoxoxoxoxox
+# - name: fail
+#   command: "/home/shollingsworth/bin/testhook.sh"
+#   changed_when: false

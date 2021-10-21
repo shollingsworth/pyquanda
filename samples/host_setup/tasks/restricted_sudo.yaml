@@ -1,0 +1,12 @@
+- name: Concat restricted commands
+  set_fact:
+    joined_cmds: "{{ restricted_commands | join(', !') }}"
+
+- name: Add user "ansibleuser" to sudo
+  lineinfile:
+    path: "/etc/sudoers.d/{{ username }}"
+    line: "{{ username }} ALL =(ALL) NOPASSWD: ALL, !{{ joined_cmds }}"
+    state: present
+    mode: 0440
+    create: true
+    validate: "visudo -cf %s"

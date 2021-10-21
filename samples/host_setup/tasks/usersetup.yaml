@@ -1,0 +1,12 @@
+---
+- name: add group
+  group:
+    name: interview
+
+- name: add user
+  user:
+    name: "{{ username }}"
+    password: "{{ password | password_hash('sha512') }}"
+    groups:
+      - interview
+    shell: /usr/local/bin/xonsh

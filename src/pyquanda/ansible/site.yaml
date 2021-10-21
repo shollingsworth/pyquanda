@@ -1,0 +1,17 @@
+---
+# This playbook deploys the whole application stack in this site.
+- name: REPLACEME
+  hosts: all
+  become: false
+  connection: local
+  vars:
+    restricted_commands:
+      - /usr/bin/su
+      - /usr/bin/bash
+      - /usr/bin/sh
+      - /usr/bin/less
+
+  vars_files:
+    - /tmp/interview.yaml
+
+  roles: []

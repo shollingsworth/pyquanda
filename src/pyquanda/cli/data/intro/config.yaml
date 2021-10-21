@@ -1,0 +1,43 @@
+---
+type: intro
+description: __DESCRIPTION__
+order: -1000
+introduction:
+  - type: header
+    content: Module Starts
+  - type: j2
+    content: welcome.j2
+
+  - type: txt
+    content: |
+      content here
+
+  - type: code
+    content:
+      type: python
+      value: err.j2
+
+  - type: table
+    content:
+      title: Here is a list of bash and xonsh equivalents
+      headers:
+        - bash command
+        - xonrc equivalent
+      row_map:
+        bash:
+          func: get_code
+          args:
+            type: python
+            value: __value__
+        xonsh:
+          func: get_code
+          args:
+            type: python
+            value: __value__
+      rows:
+        - bash: echo --arg="val"
+          xonsh: echo --arg "val"
+        - bash: echo {}
+          xonsh: echo "{}"
+        - bash: echo \;
+          xonsh: echo ";"

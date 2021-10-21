@@ -1,0 +1,6 @@
+type: system
+description: __DESCRIPTION__
+order: 10000
+network_ports:
+  - type: tcp
+    port: 80
