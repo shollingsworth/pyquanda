@@ -9,7 +9,6 @@
 - [`cli`](./cli.md#module-cli): common cli attributes.
 - [`cli.subcommands`](./cli.subcommands.md#module-clisubcommands): cli subcommands.
 - [`cli.templates`](./cli.templates.md#module-clitemplates): Templates for creating new modules.
-- [`coremodules`](./coremodules.md#module-coremodules): Core / Always run modules.
 - [`environment`](./environment.md#module-environment): Environment variables and filepaths default.
 - [`exceptions`](./exceptions.md#module-exceptions): Exceptions for application.
 - [`hooks`](./hooks.md#module-hooks): base classes for hooks module.

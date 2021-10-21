@@ -112,12 +112,14 @@ optional arguments:
 ```
 ## userdata
 ```
-usage: gendoc.py userdata [-h] --destination_directory DESTINATION_DIRECTORY
+usage: gendoc.py userdata [-h] -s SRC_MODULE_DIR --destination_directory DESTINATION_DIRECTORY
 
 save userdata zip file in directory (filename: userdata.zip)
 
 optional arguments:
   -h, --help            show this help message and exit
+  -s SRC_MODULE_DIR, --src_module_dir SRC_MODULE_DIR
+                        source module directory
   --destination_directory DESTINATION_DIRECTORY, -d DESTINATION_DIRECTORY
                         src_module_dir help
 
