@@ -84,7 +84,7 @@ class Ansible:
                 "status": "complete",
             }
             EMITTER.emit(HOOK_TYPE_ANSIBLE_RUNBOOK_COMPLETE, send_d)
-        print(f"runbook {status=}, {self.name=}")
+        print(f"runbook status:{status}, name:{self.name}")
 
     def event_handler(self, evt_dct: Dict):
         """event_handler.
@@ -198,11 +198,6 @@ class Ansible:
                     "PATH": syspath,
                 },
             )
-            #  events = []
-            #  for each_host_event in run.events:  # type: ignore
-            #      events.append(each_host_event)
-            #  print(f"{run.status=} / {run.rc=}")
-            #  print(f"Final status: {run.stats}")  # type: ignore
 
     def _verify(self, path: Path):
         """_verify.
