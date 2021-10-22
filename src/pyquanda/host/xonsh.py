@@ -94,7 +94,9 @@ class QuestionPrompt:
         self.map_store = {}  # type: Dict[str,Dict]
         # pylint: disable=line-too-long
         self.map_list = lambda: [z for i in self.map_store.values() for z in i["aliases"]]  # type: ignore
-        self._add_alias(["answer"], "show answer as file or text", self.answer)
+        self._add_alias(
+            ["answer", "a"], "show answer as file or text", self.answer
+        )
         if not self.nav.no_main_intro:
             self._add_alias(
                 ["b"],
