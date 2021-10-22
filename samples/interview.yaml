@@ -1,0 +1,34 @@
+---
+quanda_id: xxxxxxxxxxxxxxxx
+firstname: John
+lastname: Doe
+username: jdoe
+fqdn: demo.test.local
+region: the-moon
+instance_id: i-xxxxxxx
+password: password
+shell_settings:
+  restricted_commands:
+    - bash
+    - sh
+    - zsh
+    - sudo
+  allow_sudo:
+    - systemctl
+    - service
+    - netstat
+    - ss
+    - lsof
+    - ls
+    - iptables
+hooks:
+  - dest_type: slack_webhook
+    event_type: all
+    config:
+      slack_webhook_url: https://hooks.slack.com/services/XXXXXX
+      template_dir: /pyquanda/samples/slack_templates/
+
+  - dest_type: executable
+    event_type: all
+    config:
+      path: /tmp/filehook.sh

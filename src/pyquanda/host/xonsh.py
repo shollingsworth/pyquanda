@@ -13,6 +13,7 @@ import prompt_toolkit.styles.defaults as defstyle
 from colors.colors import color
 from xonsh.events import events
 from xonsh.procs.specs import SubprocSpec
+from pyquanda.environment import InterviewConfig
 
 from pyquanda.hooks.config import (
     ASYNC_EMITTER,
@@ -22,17 +23,6 @@ from pyquanda.hooks.config import (
 )
 from pyquanda.hooks.registry import HookLoader
 from pyquanda.host.nav import NavFooter, Navigation
-
-RESTRICTED = ["bash", "sh", "zsh", "sudo"]
-SUDO_OK = [
-    "systemctl",
-    "service",
-    "netstat",
-    "ss",
-    "lsof",
-    "ls",
-    "iptables",
-]
 
 
 def width():
@@ -78,8 +68,9 @@ class QuestionPrompt:
     def __init__(self):
         """__init__."""
         HookLoader.load()
+        self.cfg = InterviewConfig()
         dummy_func = getattr(events, "on_pre_spec_run_does_not_exist")
-        for i in RESTRICTED:
+        for i in self.cfg.restricted_commands:
             _name = f"on_pre_spec_run_{i}"
             setattr(events, _name, dummy_func)
         defstyle.PROMPT_TOOLKIT_STYLE.append(("bottom-toolbar", "noreverse"))
@@ -284,8 +275,7 @@ class QuestionPrompt:
             self.nav, passed_map, self.show_toolbar, self.show_commands
         )
 
-    @staticmethod
-    def is_questionable(cmd_arr: List) -> bool:
+    def is_questionable(self, cmd_arr: List) -> bool:
         """is_questionable.
 
         Args:
@@ -297,8 +287,8 @@ class QuestionPrompt:
         _bin = cmd_arr[0]
         return any(
             [
-                (_bin == "sudo" and cmd_arr[1] not in SUDO_OK),
-                (_bin in RESTRICTED and _bin != "sudo"),
+                (_bin == "sudo" and cmd_arr[1] not in self.cfg.allow_sudo),
+                (_bin in self.cfg.restricted_commands and _bin != "sudo"),
             ]
         )
 

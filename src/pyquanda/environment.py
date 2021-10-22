@@ -4,7 +4,7 @@
 import logging
 import tempfile
 from pathlib import Path
-from typing import Dict
+from typing import Dict, List
 
 from jinja2 import Template
 from ruamel.yaml.main import YAML
@@ -97,6 +97,31 @@ class InterviewConfig:
             str:
         """
         return self.data["firstname"]
+
+    @property
+    def restricted_commands(self) -> List[str]:
+        """restricted_commands.
+
+        Args:
+
+        Returns:
+            List[str]: list of restricted commands, i.e. bash, zsh, etc shells
+            that might be used to breakout
+        """
+        return self.data.get("shell_settings", {}).get(
+            "restricted_commands", []
+        )
+
+    @property
+    def allow_sudo(self) -> List[str]:
+        """allow_sudo.
+
+        Args:
+
+        Returns:
+            List[str]: list of allowed sudo commands
+        """
+        return self.data.get("shell_settings", {}).get("allow_sudo", [])
 
     @property
     def lastname(self) -> str:

@@ -1,6 +1,11 @@
+# v1.0.10
+#### Moved shell restrictions to a configurable parameter
+> 2021-10-22 20:00 UTC [HEAD](https://github.com/shollingsworth/pyquanda/commit/HEAD)
+
+---
 # v1.0.9
 #### Bugfixes and  re-writes
-> 2021-10-22 19:16 UTC [HEAD](https://github.com/shollingsworth/pyquanda/commit/HEAD)
+> 2021-10-22 19:19 UTC [3fa235a](https://github.com/shollingsworth/pyquanda/commit/3fa235a8ab70b84f3672c7adae006d405059c5ad)
 
 ```
 * Removed the host config.py section

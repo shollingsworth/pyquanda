@@ -36,6 +36,23 @@ __init__.
 
 ---
 
+#### <kbd>property</kbd> allow_sudo
+
+allow_sudo. 
+
+
+
+**Args:**
+ 
+
+
+
+**Returns:**
+ 
+ - <b>`List[str]`</b>:  list of allowed sudo commands 
+
+---
+
 #### <kbd>property</kbd> firstname
 
 firstname. 
@@ -102,6 +119,23 @@ You may or may not care about this.
 
 ---
 
+#### <kbd>property</kbd> restricted_commands
+
+restricted_commands. 
+
+
+
+**Args:**
+ 
+
+
+
+**Returns:**
+ 
+ - <b>`List[str]`</b>:  list of restricted commands, i.e. bash, zsh, etc shells that might be used to breakout 
+
+---
+
 #### <kbd>property</kbd> username
 
 username. 
@@ -120,7 +154,7 @@ username.
 
 ---
 
-<a href="../src/pyquanda/environment.py#L123"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../src/pyquanda/environment.py#L148"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ### <kbd>method</kbd> `as_dict`
 
