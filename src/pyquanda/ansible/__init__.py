@@ -214,7 +214,11 @@ class Ansible:
         playbooks = []
 
         if is_all:
-            mvals = [i for i in path.iterdir() if i.is_dir()]
+            mvals = [
+                i
+                for i in path.iterdir()
+                if (i.is_dir() and not i.name.startswith("_"))
+            ]
             mod_paths = cls._get_sorted_module_paths(mvals)
         else:
             mod_paths = cls._get_sorted_module_paths([path])

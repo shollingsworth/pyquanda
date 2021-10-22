@@ -4,7 +4,6 @@
 
 import json
 from json.decoder import JSONDecodeError
-from pathlib import Path
 from typing import Any, Dict
 from base64 import b64encode
 
@@ -15,13 +14,15 @@ import validators  # pylint: disable=import-error
 from jinja2 import Template, environment as jenv
 from ruamel.yaml.main import YAML
 
-from pyquanda.environment import INTERVIEW_CONFIG_REMOTE_FILE
+from pyquanda.environment import INTERVIEW_CONFIG_REMOTE_FILE, HOOK_DIR
 from pyquanda.exceptions import PreCheckFail
 from pyquanda.hooks import Hook
 from pyquanda.hooks.config import DEST_TYPE_SLACK_WEBHOOK
 from pyquanda.environment import LOG
 
 yaml = YAML()
+
+SLACK_HOOK_DIR = HOOK_DIR.joinpath(DEST_TYPE_SLACK_WEBHOOK)
 
 
 def _json_pp(dct: Dict) -> str:
@@ -93,11 +94,28 @@ def _code_block(inp: str) -> str:
     )
 
 
+def _trunc_str(inp: str, slen=50) -> str:
+    if not inp:
+        return ""
+    return f"{inp[:slen]}[...]"
+
+
+def _retcode(inp: str) -> str:
+    inp = str(inp)
+    if not inp:
+        return ""
+    if inp == "0":
+        return ":ok:"
+    return f":x: {inp}"
+
+
 jenv.DEFAULT_FILTERS["jstr"] = _json_str  # type: ignore
 jenv.DEFAULT_FILTERS["json_pp"] = _json_pp  # type: ignore
 jenv.DEFAULT_FILTERS["to_b64"] = _to_b64  # type: ignore
 jenv.DEFAULT_FILTERS["titleize"] = _titleize  # type: ignore
 jenv.DEFAULT_FILTERS["code"] = _code_block  # type: ignore
+jenv.DEFAULT_FILTERS["trunc"] = _trunc_str  # type: ignore
+jenv.DEFAULT_FILTERS["rc"] = _retcode  # type: ignore
 
 
 class SlackSend:
@@ -162,12 +180,11 @@ class SlackWebhook(Hook):
         self.url = _url
         self.slack = SlackSend(self.url)
 
-        template_dir = Path(self._get_config_var("template_dir")).expanduser()
-        if not (template_dir.exists() and template_dir.is_dir()):
+        if not (SLACK_HOOK_DIR.exists() and SLACK_HOOK_DIR.is_dir()):
             raise PreCheckFail(
-                f"{template_dir} does not exist, or is not a directory"
+                f"{SLACK_HOOK_DIR} does not exist, or is not a directory"
             )
-        self._template_dir = template_dir
+        self._template_dir = SLACK_HOOK_DIR
         self.tfile = self._template_dir.joinpath(f"{self.name}.j2.json")
         self.template = self._get_template()
 

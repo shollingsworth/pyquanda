@@ -17,6 +17,7 @@ from pyquanda.environment import InterviewConfig
 
 from pyquanda.hooks.config import (
     ASYNC_EMITTER,
+    HOOK_TYPE_NAV_NEXT,
     HOOK_TYPE_QUESTIONABLE,
     HOOK_TYPE_ANSWER,
     HOOK_TYPE_XONSH_COMMAND_ENTERED,
@@ -140,7 +141,10 @@ class QuestionPrompt:
         if not self.nav.no_main_intro and not self.nav.seen_main_intro:
             self.nav.main_intro.run()
             self.nav.seen_main_intro = True
+            ASYNC_EMITTER.emit(HOOK_TYPE_NAV_NEXT, self.nav.as_dict())
         if not self.nav.seen_intro:
+            for cmd in self.nav.background_commands:
+                self.run_background_task(cmd)
             self.nav.introduction.run()
             self.nav.seen_intro = True
 

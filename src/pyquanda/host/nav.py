@@ -14,12 +14,16 @@ from rich.console import Console, Group
 from rich.panel import Panel
 from rich.table import Table  # type: ignore
 from rich.text import Text
-
 from pyquanda.exceptions import PreCheckFail
-from pyquanda.host.question_state import StateData
-from pyquanda.host.question_data import QuestionCollection
-from pyquanda.host.main_intro_data import MainIntroCollection
+from pyquanda.hooks.config import (
+    ASYNC_EMITTER,
+    HOOK_TYPE_NAV_NEXT,
+    HOOK_TYPE_NAV_PREVIOUS,
+)
 from pyquanda.host.intro import Intro, intro_load_pickle_b64
+from pyquanda.host.main_intro_data import MainIntroCollection
+from pyquanda.host.question_data import QuestionCollection
+from pyquanda.host.question_state import StateData
 
 
 def color(color_name: str, txt: str) -> str:
@@ -315,23 +319,31 @@ class Navigation:
 
     def go_next(self):
         """next."""
+        do_hook = True
         if self.has_next_question:
             self.current_question_index += 1
         elif self.has_next_module:
             self.current_module_index += 1
             self.current_question_index = 0
         else:
+            do_hook = False
             print(color("red", "No more modules or questions"))
+        if do_hook:
+            ASYNC_EMITTER.emit(HOOK_TYPE_NAV_NEXT, self.as_dict())
 
     def go_previous(self):
         """previous."""
+        do_hook = True
         if self.has_previous_question:
             self.current_question_index -= 1
         elif self.has_previous_module:
             self.current_module_index -= 1
             self.current_question_index = len(self.current_question_set) - 1
         else:
+            do_hook = False
             print(color("red", "You are on the first module / question"))
+        if do_hook:
+            ASYNC_EMITTER.emit(HOOK_TYPE_NAV_PREVIOUS, self.as_dict())
 
     def as_dict(self) -> Dict[str, str]:
         """as_dict.

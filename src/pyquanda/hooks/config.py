@@ -22,10 +22,11 @@ HOOK_TYPE_ANSWER = "xonsh_answer"
 HOOK_TYPE_XONSH_COMMAND_ENTERED = "xonsh_command"
 HOOK_TYPE_QUESTIONABLE = "questionable_activity"
 
+HOOK_TYPE_NAV_NEXT = "nav_next"
+HOOK_TYPE_NAV_PREVIOUS = "nav_previous"
 
 HOOK_TYPE_ANSIBLE_EVENT = "ansible_event"
 HOOK_TYPE_ANSIBLE_RUNBOOK_COMPLETE = "runbook_complete"
-HOOK_TYPE_ANSIBLE_ALL_COMPLETE = "all_complete"
 
 _MOD = sys.modules[__name__]
 VALID_DEST_TYPES = [

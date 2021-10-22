@@ -5,10 +5,14 @@
 # <kbd>module</kbd> `host.nav`
 Navigation related utils. 
 
+**Global Variables**
+---------------
+- **HOOK_TYPE_NAV_NEXT**
+- **HOOK_TYPE_NAV_PREVIOUS**
 
 ---
 
-<a href="../src/pyquanda/host/nav.py#L25"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../src/pyquanda/host/nav.py#L29"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `color`
 
@@ -34,12 +38,12 @@ color.
 
 ---
 
-<a href="../src/pyquanda/host/nav.py#L38"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../src/pyquanda/host/nav.py#L42"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>class</kbd> `Navigation`
 Navigation. 
 
-<a href="../src/pyquanda/host/nav.py#L41"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../src/pyquanda/host/nav.py#L45"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ### <kbd>method</kbd> `__init__`
 
@@ -254,7 +258,7 @@ seen_main_intro.
 
 ---
 
-<a href="../src/pyquanda/host/nav.py#L336"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../src/pyquanda/host/nav.py#L348"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ### <kbd>method</kbd> `as_dict`
 
@@ -277,7 +281,7 @@ as_dict.
 
 ---
 
-<a href="../src/pyquanda/host/nav.py#L316"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../src/pyquanda/host/nav.py#L320"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ### <kbd>method</kbd> `go_next`
 
@@ -289,7 +293,7 @@ next.
 
 ---
 
-<a href="../src/pyquanda/host/nav.py#L326"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../src/pyquanda/host/nav.py#L334"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ### <kbd>method</kbd> `go_previous`
 
@@ -302,7 +306,7 @@ previous.
 
 ---
 
-<a href="../src/pyquanda/host/nav.py#L365"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../src/pyquanda/host/nav.py#L377"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>class</kbd> `NavFooter`
 NavFooter. 
@@ -312,7 +316,7 @@ NavFooter.
 
 ---
 
-<a href="../src/pyquanda/host/nav.py#L368"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../src/pyquanda/host/nav.py#L380"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ### <kbd>method</kbd> `get`
 

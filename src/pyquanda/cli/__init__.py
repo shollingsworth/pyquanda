@@ -106,11 +106,17 @@ class ParserWrap:
             type=str,
         )
 
-    def add_interview_config(self):
+    def add_interview_config(self, required=False):
         """add_interview_config."""
-        if INTERVIEW_CONFIG_REMOTE_FILE.exists():
+        # explicitly required
+        if required:
+            req = True
+            def_path = None
+        # use existing in /tmp
+        elif INTERVIEW_CONFIG_REMOTE_FILE.exists():
             req = False
             def_path = INTERVIEW_CONFIG_REMOTE_FILE
+        # default to required
         else:
             req = True
             def_path = None

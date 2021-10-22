@@ -1,30 +1,100 @@
 {
-  "blocks": [
-    {
-      "type": "header",
-      "text": {
-        "type": "plain_text",
-        "text": ":ansible: Runbook complete {{vars.firstname}} {{vars.lastname}}",
-        "emoji": true
-      }
-    },
-    {
-      "type": "divider"
-    },
-    {
-      "type": "header",
-      "text": {
-        "type": "plain_text",
-        "text": "Output",
-        "emoji": true
-      }
-    },
-    {
-      "type": "section",
-      "text": {
-        "type": "mrkdwn",
-        "text": "{{event | json_pp | code | jstr}}"
-      }
-    }
-  ]
+    "blocks": [
+        {
+            "type": "header",
+            "text": {
+                "type": "plain_text",
+                "text": ":partyparrot: {{vars.firstname}} {{vars.lastname}} instance is ready!",
+                "emoji": true
+            }
+        },
+        {
+            "type": "divider"
+        },
+        {
+            "type": "section",
+            "text": {
+                "type": "mrkdwn",
+                "text": "Candidate: `{{vars.firstname}} {{vars.lastname}}`"
+            }
+        },
+        {
+            "type": "section",
+            "text": {
+                "type": "mrkdwn",
+                "text": "# ----------------\n# Paste this into the zoom session chat window\n# ----------------\n"
+            }
+        },
+        {
+            "type": "section",
+            "text": {
+                "type": "mrkdwn",
+                "text": "Hostname: `{{vars.fqdn}}`"
+            }
+        },
+        {
+            "type": "section",
+            "text": {
+                "type": "mrkdwn",
+                "text": "Username: `{{vars.username}}`"
+            }
+        },
+        {
+            "type": "section",
+            "text": {
+                "type": "mrkdwn",
+                "text": "Pasword: `{{vars.password}}`"
+            }
+        },
+        {
+            "type": "section",
+            "text": {
+                "type": "mrkdwn",
+                "text": "Login Cmd: `ssh {{vars.username}}@{{vars.fqdn}}`"
+            }
+        },
+        {
+            "type": "section",
+            "text": {
+                "type": "mrkdwn",
+                "text": "Session Manager Link `aws-account`: https://{{vars.region}}.console.aws.amazon.com/systems-manager/session-manager/{{vars.instance_id}}?region={{vars.region}}"
+            }
+        },
+        {
+            "type": "section",
+            "text": {
+                "type": "mrkdwn",
+                "text": "Source Control: https://github.com"
+            }
+        },
+        {
+            "type": "divider"
+        },
+        {
+            "type": "header",
+            "text": {
+                "type": "plain_text",
+                "text": ":ansible: Runbook complete {{vars.firstname}} {{vars.lastname}}",
+                "emoji": true
+            }
+        },
+        {
+            "type": "divider"
+        },
+        {
+            "type": "header",
+            "text": {
+                "type": "plain_text",
+                "text": "Output",
+                "emoji": true
+            }
+        },
+        {
+            "type": "section",
+            "text": {
+                "type": "mrkdwn",
+                "text": "{{event | json_pp | code | jstr}}"
+            }
+        }
+    ]
 }

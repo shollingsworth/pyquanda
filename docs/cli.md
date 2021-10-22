@@ -113,7 +113,7 @@ add_destination_directory.
 ### <kbd>method</kbd> `add_interview_config`
 
 ```python
-add_interview_config()
+add_interview_config(required=False)
 ```
 
 add_interview_config. 
@@ -145,12 +145,12 @@ add_src_module_directory.
 
 ---
 
-<a href="../src/pyquanda/cli/__init__.py#L128"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../src/pyquanda/cli/__init__.py#L134"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>class</kbd> `MainParser`
 MainParser. 
 
-<a href="../src/pyquanda/cli/__init__.py#L133"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../src/pyquanda/cli/__init__.py#L139"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ### <kbd>method</kbd> `__init__`
 
@@ -248,7 +248,7 @@ add_destination_directory.
 ### <kbd>method</kbd> `add_interview_config`
 
 ```python
-add_interview_config()
+add_interview_config(required=False)
 ```
 
 add_interview_config. 
@@ -279,7 +279,7 @@ add_src_module_directory.
 
 ---
 
-<a href="../src/pyquanda/cli/__init__.py#L149"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../src/pyquanda/cli/__init__.py#L155"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ### <kbd>method</kbd> `add_subcommand`
 
@@ -305,7 +305,7 @@ add_subcommand.
 
 ---
 
-<a href="../src/pyquanda/cli/__init__.py#L166"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../src/pyquanda/cli/__init__.py#L172"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ### <kbd>method</kbd> `display_subcommand_help`
 
@@ -323,7 +323,7 @@ display_subcommand_help.
 
 ---
 
-<a href="../src/pyquanda/cli/__init__.py#L175"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../src/pyquanda/cli/__init__.py#L181"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ### <kbd>method</kbd> `run`
 

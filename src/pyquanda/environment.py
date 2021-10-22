@@ -21,6 +21,7 @@ LOG.addHandler(logging.FileHandler(filename=LOGFILE))
 REMOTE_BASE_PATH = Path("/opt/interview_env")
 _TMP = Path(tempfile.gettempdir())
 
+HOOK_DIR = REMOTE_BASE_PATH.joinpath("_hooks")
 LOCK_FILE = _TMP.joinpath("interview_locfile.lock")
 INTERVIEW_CONFIG_REMOTE_FILE = _TMP.joinpath("interview.yaml")
 QUESTIONS_DATA = _TMP.joinpath("questions.json")

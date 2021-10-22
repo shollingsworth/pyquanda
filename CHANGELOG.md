@@ -1,6 +1,16 @@
 # v1.0.10
+#### Changed the way hooks are called / configured
+> 2021-10-22 23:21 UTC [88e7be3](https://github.com/shollingsworth/pyquanda/commit/88e7be34fbed7c0bda184b6751a528a8001a2b3c)
+
+```
+* rolled hooks into userdata.zip and the source repo
+* adjusted some jinja2 slack filters
+* merged runbook complete and all complete
+* fixed question background process issue
+* added nav forward / previous hooks
+```
 #### Moved shell restrictions to a configurable parameter
-> 2021-10-22 20:00 UTC [HEAD](https://github.com/shollingsworth/pyquanda/commit/HEAD)
+> 2021-10-22 20:00 UTC [2fe0b01](https://github.com/shollingsworth/pyquanda/commit/2fe0b014bddd93aeb9299eaee53106220a20a40f)
 
 ---
 # v1.0.9

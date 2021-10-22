@@ -9,6 +9,7 @@ import zipfile
 from pathlib import Path
 
 from pyquanda.environment import (
+    INTERVIEW_CONFIG_REMOTE_FILE,
     REMOTE_BASE_PATH,
     DEMO_DIR,
 )
@@ -21,8 +22,14 @@ from pyquanda.host.question_data import QuestionCollection
 class UserDataScript:
     """UserDataScript."""
 
-    def __init__(self, plugins_path: str, pkg_gzip: str = None):
+    def __init__(
+        self,
+        plugins_path: str,
+        config_file: str,
+        pkg_gzip: str = None,
+    ):
         """__init__."""
+        self.config_file = config_file
         self.plugins_path = Path(plugins_path)
         if pkg_gzip:
             _path = Path(pkg_gzip)
@@ -72,8 +79,13 @@ class UserDataScript:
 
     def _setup(self):
         """_setup."""
+        hook_dir = self.plugins_path.joinpath("_hooks")
+        if hook_dir.exists() and hook_dir.is_dir():
+            shutil.copytree(hook_dir, self.tempdir.joinpath(hook_dir.name))
+
         for i in ModulesCollection.all():
             shutil.copytree(i.path, self.tempdir.joinpath(i.path.name))
+
         if self.pkg_gzip:
             dstpkg = self.tempdir.joinpath(self.pkg_gzip.name)
             shutil.copy(self.pkg_gzip, dstpkg)
@@ -82,6 +94,9 @@ class UserDataScript:
         """zipfile."""
         _zfile = self.basedir.joinpath("userdata.zip")
         with zipfile.ZipFile(_zfile, "w", zipfile.ZIP_DEFLATED) as zfile:
+            zfile.write(
+                self.config_file, arcname=str(INTERVIEW_CONFIG_REMOTE_FILE)
+            )
             for root, _, files in os.walk(self.tempdir):
                 for file in files:
                     base = Path(
@@ -95,8 +110,12 @@ class UserDataScript:
 
 def main():
     """Run main function."""
-    with UserDataScript(str(DEMO_DIR)) as udata:
-        print(udata)
+    with UserDataScript(
+        str(DEMO_DIR), str(INTERVIEW_CONFIG_REMOTE_FILE)
+    ) as udata:
+        zfile = udata.zipfile()
+        print(zfile)
+        shutil.copy(zfile, "/tmp/test.zip")
     QuestionCollection.export()
     MainIntroCollection.export()
 

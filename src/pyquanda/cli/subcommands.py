@@ -27,8 +27,6 @@ from pyquanda.host.question_data import QuestionCollection
 from pyquanda.host.main_intro_data import MainIntroCollection
 from pyquanda.host.userdata import UserDataScript
 
-BASE_YAML = Path("/tmp/interview.yaml")
-
 
 XONSH_FILE = Path("~/.xonshrc").expanduser()
 XONSH_TXT = """
@@ -209,8 +207,6 @@ class AssembleQuestions:
             _config_replace_if_arg_given(args.interview_config_yaml)
         base_mod_path = Path(args.src_module_dir)
         for mod_path in base_mod_path.iterdir():
-            if not mod_path.is_dir():
-                continue
             ModuleLoader.load(mod_path)
         HookLoader.load()
         QuestionCollection.export()
@@ -332,7 +328,7 @@ class SaveUserData:
             "save userdata zip file in directory (filename: userdata.zip)",
             self.run,
         )
-        _pwrap.add_interview_config()
+        _pwrap.add_interview_config(required=True)
         _pwrap.add_src_module_directory()
         _pwrap.add_destination_directory(required=True)
         self.parser = _pwrap.parser
@@ -344,14 +340,13 @@ class SaveUserData:
         Args:
             args (argparse.Namespace): args
         """
-        if args.interview_config_yaml:
-            _config_replace_if_arg_given(args.interview_config_yaml)
-        with UserDataScript(args.src_module_dir) as udata:
+        with UserDataScript(
+            args.src_module_dir, args.interview_config_yaml
+        ) as udata:
             dest_dir = Path(args.destination_directory)
             zfile = udata.zipfile()
             dest_file = dest_dir.joinpath(zfile.name)
             shutil.copy(zfile, dest_file)
-
             print(f"{dest_file.absolute()} saved!")
 
 
@@ -373,7 +368,6 @@ class Bootstrap:
             "bootstrap host given userdata.zip file",
             self.run,
         )
-        _pwrap.add_interview_config()
         self.parser = _pwrap.parser
         self.parser.add_argument(
             "userdata_file",
@@ -389,8 +383,6 @@ class Bootstrap:
         Raises:
             SystemExit: on error
         """
-        if args.interview_config_yaml:
-            _config_replace_if_arg_given(args.interview_config_yaml)
         pzip = Path(args.userdata_file)
         if not pzip.exists():
             raise SystemExit(f"{pzip} file does not exist")
@@ -399,10 +391,15 @@ class Bootstrap:
 
         ns = argparse.Namespace()
         ns.src_module_dir = str(REMOTE_BASE_PATH)
+        ns.interview_config_yaml = str(INTERVIEW_CONFIG_REMOTE_FILE)
+        ns.debug = False
         AssembleQuestions.run(ns)
         RunAllModules.run(ns)
         pzip.unlink()
-        shutil.rmtree(REMOTE_BASE_PATH)
+        for i in REMOTE_BASE_PATH.iterdir():
+            if i.name == "_hooks":
+                continue
+            shutil.rmtree(i)
         tmpdir = Path("/tmp")
         for i in tmpdir.iterdir():
             if i.name.startswith("tmp"):

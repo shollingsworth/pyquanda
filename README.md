@@ -122,7 +122,7 @@ optional arguments:
 ```
 ## userdata
 ```
-usage: gendoc.py userdata [-h] [-c INTERVIEW_CONFIG_YAML] -s SRC_MODULE_DIR --destination_directory DESTINATION_DIRECTORY
+usage: gendoc.py userdata [-h] -c INTERVIEW_CONFIG_YAML -s SRC_MODULE_DIR --destination_directory DESTINATION_DIRECTORY
 
 save userdata zip file in directory (filename: userdata.zip)
 
@@ -138,7 +138,7 @@ optional arguments:
 ```
 ## bootstrap
 ```
-usage: gendoc.py bootstrap [-h] [-c INTERVIEW_CONFIG_YAML] userdata_file
+usage: gendoc.py bootstrap [-h] userdata_file
 
 bootstrap host given userdata.zip file
 
@@ -146,9 +146,7 @@ positional arguments:
   userdata_file
 
 optional arguments:
-  -h, --help            show this help message and exit
-  -c INTERVIEW_CONFIG_YAML, --interview_config_yaml INTERVIEW_CONFIG_YAML
-                        starting configuration yaml
+  -h, --help     show this help message and exit
 
 ```
 ## demo

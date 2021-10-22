@@ -12,12 +12,12 @@ Abstract method for other modules.
 
 ---
 
-<a href="../src/pyquanda/hooks/dest_types/slack_webhook.py#L103"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../src/pyquanda/hooks/dest_types/slack_webhook.py#L121"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>class</kbd> `SlackSend`
 Send slack messages to ops-interviews channel. 
 
-<a href="../src/pyquanda/hooks/dest_types/slack_webhook.py#L106"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../src/pyquanda/hooks/dest_types/slack_webhook.py#L124"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ### <kbd>method</kbd> `__init__`
 
@@ -44,7 +44,7 @@ Slack logger.
 
 ---
 
-<a href="../src/pyquanda/hooks/dest_types/slack_webhook.py#L132"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../src/pyquanda/hooks/dest_types/slack_webhook.py#L150"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ### <kbd>method</kbd> `async_send`
 
@@ -56,7 +56,7 @@ Hit send.
 
 ---
 
-<a href="../src/pyquanda/hooks/dest_types/slack_webhook.py#L123"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../src/pyquanda/hooks/dest_types/slack_webhook.py#L141"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ### <kbd>method</kbd> `send`
 
@@ -75,12 +75,12 @@ send.
 
 ---
 
-<a href="../src/pyquanda/hooks/dest_types/slack_webhook.py#L140"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../src/pyquanda/hooks/dest_types/slack_webhook.py#L158"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>class</kbd> `SlackWebhook`
 WebHookNoAuth. 
 
-<a href="../src/pyquanda/hooks/dest_types/slack_webhook.py#L143"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../src/pyquanda/hooks/dest_types/slack_webhook.py#L161"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ### <kbd>method</kbd> `__init__`
 
@@ -112,7 +112,7 @@ __init__.
 
 ---
 
-<a href="../src/pyquanda/hooks/dest_types/slack_webhook.py#L233"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../src/pyquanda/hooks/dest_types/slack_webhook.py#L250"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ### <kbd>method</kbd> `async_send`
 
@@ -130,7 +130,7 @@ send.
 
 ---
 
-<a href="../src/pyquanda/hooks/dest_types/slack_webhook.py#L224"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../src/pyquanda/hooks/dest_types/slack_webhook.py#L241"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ### <kbd>method</kbd> `send`
 

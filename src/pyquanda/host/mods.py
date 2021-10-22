@@ -343,5 +343,8 @@ class ModuleLoader:
         """initialize class."""
         if not path.is_dir():
             return
+        # we treat these as hidden / not processed
+        if path.name.startswith("_"):
+            return
         data = InterviewConfig(path).data
         cls.LOAD_MAP[data["type"]](path)
