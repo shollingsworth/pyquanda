@@ -1,0 +1,54 @@
+{
+    "blocks": [
+        {
+            "type": "divider"
+        },
+        {
+            "type": "header",
+            "text": {
+                "type": "plain_text",
+                "text": ":ansible: Error",
+                "emoji": true
+            }
+        },
+        {
+            "type": "header",
+            "text": {
+                "type": "plain_text",
+                "text": ":alert: Playbook: {{event.data.play | titleize}}",
+                "emoji": true
+            }
+        },
+        {
+            "type": "divider"
+        },
+        {
+            "type": "header",
+            "text": {
+                "type": "plain_text",
+                "text": "Result",
+                "emoji": true
+            }
+        },
+        {
+            "type": "divider"
+        },
+        {
+            "type": "section",
+            "text": {
+                "type": "mrkdwn",
+                "text": "{{event.res | json_pp | code | jstr }}"
+            }
+        },
+        {
+            "type": "divider"
+        },
+        {
+            "type": "section",
+            "text": {
+                "type": "mrkdwn",
+                "text": "Instance: {{vars.firstname}} {{vars.lastname}}"
+            }
+        }
+    ]
+}

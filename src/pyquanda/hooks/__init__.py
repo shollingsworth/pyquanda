@@ -27,10 +27,10 @@ class Hook(ABC):
             None:
         """
         self.name = name
-        _config = yaml.load(INTERVIEW_CONFIG_REMOTE_FILE)  # type: Dict
-        _config.pop("hooks")
-        _config.update(config)
-        self.config = _config
+        self.vars = yaml.load(INTERVIEW_CONFIG_REMOTE_FILE)  # type: Dict
+        if "hooks" in self.vars:
+            del self.vars["hooks"]
+        self.config = config
 
     def fmt_json(self, dct: Dict) -> Dict:
         """fmt_json.
@@ -43,10 +43,19 @@ class Hook(ABC):
         """
         return {
             "ts": str(time.time()),
+            "vars": self.vars,
             "type": self.name,
             "config": self.config,
             "event": dct,
         }
+
+    @abstractmethod
+    async def async_send(self, dct: Dict):
+        """send.
+
+        Args:
+            dct (Dict): dct
+        """
 
     @abstractmethod
     def send(self, dct: Dict):

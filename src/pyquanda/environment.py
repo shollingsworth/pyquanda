@@ -1,21 +1,31 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Environment variables and filepaths default."""
+"""Environment variables, configuration and static filepaths."""
+import logging
+import tempfile
 from pathlib import Path
 from typing import Dict
 
 from jinja2 import Template
 from ruamel.yaml.main import YAML
 
-_yaml = YAML()
+logging.basicConfig()
+LOGFILE = Path("/tmp/pyquanda.log")
+if not LOGFILE.exists():
+    LOGFILE.write_text("")
+    LOGFILE.chmod(0o0666)
+LOG = logging.getLogger("interview-bootstrap")
+LOG.setLevel(logging.INFO)
+LOG.addHandler(logging.FileHandler(filename=LOGFILE))
 
 REMOTE_BASE_PATH = Path("/opt/interview_env")
+_TMP = Path(tempfile.gettempdir())
 
-LOCK_FILE = Path("/tmp").joinpath("interview_locfile.lock")
-INTERVIEW_CONFIG_REMOTE_FILE = Path("/tmp").joinpath("interview.yaml")
-QUESTIONS_DATA = Path("/tmp").joinpath("questions.json")
-INTRO_DATA = Path("/tmp").joinpath("intro.json")
-INTERVIEW_STATE_REMOTE_FILE = Path("/tmp").joinpath("interview_state.sqlite")
+LOCK_FILE = _TMP.joinpath("interview_locfile.lock")
+INTERVIEW_CONFIG_REMOTE_FILE = _TMP.joinpath("interview.yaml")
+QUESTIONS_DATA = _TMP.joinpath("questions.json")
+INTRO_DATA = _TMP.joinpath("intro.json")
+INTERVIEW_STATE_REMOTE_FILE = _TMP.joinpath("interview_state.sqlite")
 
 
 DEMO_DIR = Path(__file__).parent.joinpath("demo")
@@ -23,6 +33,8 @@ MOCK_FILE = DEMO_DIR.joinpath("mock_config.yaml")
 MOCK_CONFIG = "\n".join(
     MOCK_FILE.read_text().splitlines() + [f"demo_path: {DEMO_DIR}"]
 )
+
+_yaml = YAML()
 
 
 class InterviewConfig:

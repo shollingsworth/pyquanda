@@ -77,6 +77,18 @@ add_arg_type.
 
 ---
 
+<a href="../src/pyquanda/cli/__init__.py#L73"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+
+### <kbd>method</kbd> `add_debug`
+
+```python
+add_debug()
+```
+
+add_no_overwrite. 
+
+---
+
 <a href="../src/pyquanda/cli/__init__.py#L57"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ### <kbd>method</kbd> `add_destination_directory`
@@ -96,7 +108,19 @@ add_destination_directory.
 
 ---
 
-<a href="../src/pyquanda/cli/__init__.py#L73"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../src/pyquanda/cli/__init__.py#L109"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+
+### <kbd>method</kbd> `add_interview_config`
+
+```python
+add_interview_config()
+```
+
+add_interview_config. 
+
+---
+
+<a href="../src/pyquanda/cli/__init__.py#L82"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ### <kbd>method</kbd> `add_no_overwrite`
 
@@ -108,7 +132,7 @@ add_no_overwrite.
 
 ---
 
-<a href="../src/pyquanda/cli/__init__.py#L82"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../src/pyquanda/cli/__init__.py#L91"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ### <kbd>method</kbd> `add_src_module_directory`
 
@@ -121,12 +145,12 @@ add_src_module_directory.
 
 ---
 
-<a href="../src/pyquanda/cli/__init__.py#L101"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../src/pyquanda/cli/__init__.py#L128"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>class</kbd> `MainParser`
 MainParser. 
 
-<a href="../src/pyquanda/cli/__init__.py#L106"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../src/pyquanda/cli/__init__.py#L133"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ### <kbd>method</kbd> `__init__`
 
@@ -188,6 +212,18 @@ add_arg_type.
 
 ---
 
+<a href="../src/pyquanda/cli/__init__.py#L73"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+
+### <kbd>method</kbd> `add_debug`
+
+```python
+add_debug()
+```
+
+add_no_overwrite. 
+
+---
+
 <a href="../src/pyquanda/cli/__init__.py#L57"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ### <kbd>method</kbd> `add_destination_directory`
@@ -207,7 +243,19 @@ add_destination_directory.
 
 ---
 
-<a href="../src/pyquanda/cli/__init__.py#L73"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../src/pyquanda/cli/__init__.py#L109"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+
+### <kbd>method</kbd> `add_interview_config`
+
+```python
+add_interview_config()
+```
+
+add_interview_config. 
+
+---
+
+<a href="../src/pyquanda/cli/__init__.py#L82"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ### <kbd>method</kbd> `add_no_overwrite`
 
@@ -219,7 +267,7 @@ add_no_overwrite.
 
 ---
 
-<a href="../src/pyquanda/cli/__init__.py#L82"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../src/pyquanda/cli/__init__.py#L91"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ### <kbd>method</kbd> `add_src_module_directory`
 
@@ -231,7 +279,7 @@ add_src_module_directory.
 
 ---
 
-<a href="../src/pyquanda/cli/__init__.py#L122"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../src/pyquanda/cli/__init__.py#L149"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ### <kbd>method</kbd> `add_subcommand`
 
@@ -257,7 +305,7 @@ add_subcommand.
 
 ---
 
-<a href="../src/pyquanda/cli/__init__.py#L139"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../src/pyquanda/cli/__init__.py#L166"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ### <kbd>method</kbd> `display_subcommand_help`
 
@@ -275,7 +323,7 @@ display_subcommand_help.
 
 ---
 
-<a href="../src/pyquanda/cli/__init__.py#L148"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../src/pyquanda/cli/__init__.py#L175"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ### <kbd>method</kbd> `run`
 

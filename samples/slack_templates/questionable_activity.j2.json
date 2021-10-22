@@ -1,0 +1,26 @@
+{
+  "blocks": [
+    {
+      "type": "header",
+      "text": {
+        "type": "plain_text",
+        "text": ":alert: Questionable Activity",
+        "emoji": true
+      }
+    },
+    {
+      "type": "section",
+      "text": {
+        "type": "mrkdwn",
+        "text": "{{event.command | code | jstr}}"
+      }
+    },
+    {
+      "type": "section",
+      "text": {
+        "type": "mrkdwn",
+        "text": "{{vars.firstname | jstr}} {{vars.lastname | jstr}} / *{{event.description | jstr}}* - {{event.current_question | jstr}}"
+      }
+    }
+  ]
+}

@@ -3,7 +3,7 @@
 <a href="../src/pyquanda/environment.py#L0"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 # <kbd>module</kbd> `environment`
-Environment variables and filepaths default. 
+Environment variables, configuration and static filepaths. 
 
 **Global Variables**
 ---------------
@@ -12,12 +12,12 @@ Environment variables and filepaths default.
 
 ---
 
-<a href="../src/pyquanda/environment.py#L28"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../src/pyquanda/environment.py#L40"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>class</kbd> `InterviewConfig`
 InterviewConfig. 
 
-<a href="../src/pyquanda/environment.py#L31"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../src/pyquanda/environment.py#L43"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ### <kbd>method</kbd> `__init__`
 
@@ -120,7 +120,7 @@ username.
 
 ---
 
-<a href="../src/pyquanda/environment.py#L111"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../src/pyquanda/environment.py#L123"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ### <kbd>method</kbd> `as_dict`
 

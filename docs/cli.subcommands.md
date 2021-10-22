@@ -12,7 +12,7 @@ cli subcommands.
 
 ---
 
-<a href="../src/pyquanda/cli/subcommands.py#L44"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../src/pyquanda/cli/subcommands.py#L45"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `yesno`
 
@@ -25,12 +25,12 @@ Simple Yes/No Function.
 
 ---
 
-<a href="../src/pyquanda/cli/subcommands.py#L56"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../src/pyquanda/cli/subcommands.py#L69"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>class</kbd> `CreateNewModule`
 CreateNewModule. 
 
-<a href="../src/pyquanda/cli/subcommands.py#L59"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../src/pyquanda/cli/subcommands.py#L72"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ### <kbd>method</kbd> `__init__`
 
@@ -56,7 +56,7 @@ __init__.
 
 ---
 
-<a href="../src/pyquanda/cli/subcommands.py#L80"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../src/pyquanda/cli/subcommands.py#L93"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ### <kbd>method</kbd> `create_new_module`
 
@@ -69,12 +69,12 @@ Run main function.
 
 ---
 
-<a href="../src/pyquanda/cli/subcommands.py#L91"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../src/pyquanda/cli/subcommands.py#L104"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>class</kbd> `RunModule`
 RunModule. 
 
-<a href="../src/pyquanda/cli/subcommands.py#L94"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../src/pyquanda/cli/subcommands.py#L107"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ### <kbd>method</kbd> `__init__`
 
@@ -100,7 +100,7 @@ __init__.
 
 ---
 
-<a href="../src/pyquanda/cli/subcommands.py#L112"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../src/pyquanda/cli/subcommands.py#L127"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ### <kbd>method</kbd> `run`
 
@@ -119,12 +119,12 @@ run.
 
 ---
 
-<a href="../src/pyquanda/cli/subcommands.py#L124"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../src/pyquanda/cli/subcommands.py#L140"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>class</kbd> `RunAllModules`
 RunAllModules. 
 
-<a href="../src/pyquanda/cli/subcommands.py#L127"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../src/pyquanda/cli/subcommands.py#L143"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ### <kbd>method</kbd> `__init__`
 
@@ -150,7 +150,7 @@ __init__.
 
 ---
 
-<a href="../src/pyquanda/cli/subcommands.py#L145"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../src/pyquanda/cli/subcommands.py#L163"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ### <kbd>method</kbd> `run`
 
@@ -169,12 +169,12 @@ run.
 
 ---
 
-<a href="../src/pyquanda/cli/subcommands.py#L164"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../src/pyquanda/cli/subcommands.py#L176"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>class</kbd> `AssembleQuestions`
 AssembleQuestions. 
 
-<a href="../src/pyquanda/cli/subcommands.py#L167"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../src/pyquanda/cli/subcommands.py#L179"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ### <kbd>method</kbd> `__init__`
 
@@ -200,7 +200,7 @@ __init__.
 
 ---
 
-<a href="../src/pyquanda/cli/subcommands.py#L188"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../src/pyquanda/cli/subcommands.py#L201"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ### <kbd>method</kbd> `run`
 
@@ -219,12 +219,12 @@ run.
 
 ---
 
-<a href="../src/pyquanda/cli/subcommands.py#L205"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../src/pyquanda/cli/subcommands.py#L220"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>class</kbd> `TestQuestions`
 TestQuestions. 
 
-<a href="../src/pyquanda/cli/subcommands.py#L208"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../src/pyquanda/cli/subcommands.py#L223"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ### <kbd>method</kbd> `__init__`
 
@@ -250,7 +250,7 @@ __init__.
 
 ---
 
-<a href="../src/pyquanda/cli/subcommands.py#L232"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../src/pyquanda/cli/subcommands.py#L248"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ### <kbd>method</kbd> `run`
 
@@ -275,12 +275,12 @@ run.
 
 ---
 
-<a href="../src/pyquanda/cli/subcommands.py#L255"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../src/pyquanda/cli/subcommands.py#L273"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>class</kbd> `Demo`
 Demo. 
 
-<a href="../src/pyquanda/cli/subcommands.py#L258"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../src/pyquanda/cli/subcommands.py#L276"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ### <kbd>method</kbd> `__init__`
 
@@ -306,7 +306,7 @@ __init__.
 
 ---
 
-<a href="../src/pyquanda/cli/subcommands.py#L275"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../src/pyquanda/cli/subcommands.py#L294"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ### <kbd>method</kbd> `run`
 
@@ -321,66 +321,16 @@ run.
 **Args:**
  
  - <b>`args`</b> (argparse.Namespace):  args 
-
-
----
-
-<a href="../src/pyquanda/cli/subcommands.py#L295"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
-
-## <kbd>class</kbd> `SaveUserData`
-SaveUserData. 
-
-<a href="../src/pyquanda/cli/subcommands.py#L298"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
-
-### <kbd>method</kbd> `__init__`
-
-```python
-__init__(parent: MainParser) → None
-```
-
-__init__. 
-
-
-
-**Args:**
- 
- - <b>`parent`</b> (MainParser):  parent 
-
-
-
-**Returns:**
- None: 
-
-
 
 
 ---
 
 <a href="../src/pyquanda/cli/subcommands.py#L317"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
-### <kbd>method</kbd> `run`
+## <kbd>class</kbd> `SaveUserData`
+SaveUserData. 
 
-```python
-run(args: Namespace)
-```
-
-run. 
-
-
-
-**Args:**
- 
- - <b>`args`</b> (argparse.Namespace):  args 
-
-
----
-
-<a href="../src/pyquanda/cli/subcommands.py#L333"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
-
-## <kbd>class</kbd> `Bootstrap`
-Bootstrap. 
-
-<a href="../src/pyquanda/cli/subcommands.py#L336"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../src/pyquanda/cli/subcommands.py#L320"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ### <kbd>method</kbd> `__init__`
 
@@ -406,7 +356,57 @@ __init__.
 
 ---
 
-<a href="../src/pyquanda/cli/subcommands.py#L357"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../src/pyquanda/cli/subcommands.py#L340"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+
+### <kbd>method</kbd> `run`
+
+```python
+run(args: Namespace)
+```
+
+run. 
+
+
+
+**Args:**
+ 
+ - <b>`args`</b> (argparse.Namespace):  args 
+
+
+---
+
+<a href="../src/pyquanda/cli/subcommands.py#L358"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+
+## <kbd>class</kbd> `Bootstrap`
+Bootstrap. 
+
+<a href="../src/pyquanda/cli/subcommands.py#L361"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+
+### <kbd>method</kbd> `__init__`
+
+```python
+__init__(parent: MainParser) → None
+```
+
+__init__. 
+
+
+
+**Args:**
+ 
+ - <b>`parent`</b> (MainParser):  parent 
+
+
+
+**Returns:**
+ None: 
+
+
+
+
+---
+
+<a href="../src/pyquanda/cli/subcommands.py#L383"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ### <kbd>method</kbd> `run`
 

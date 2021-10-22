@@ -40,6 +40,24 @@ __init__.
 
 ---
 
+<a href="../src/pyquanda/hooks/__init__.py#L52"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+
+### <kbd>method</kbd> `async_send`
+
+```python
+async_send(dct: Dict)
+```
+
+send. 
+
+
+
+**Args:**
+ 
+ - <b>`dct`</b> (Dict):  dct 
+
+---
+
 <a href="../src/pyquanda/hooks/__init__.py#L35"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ### <kbd>method</kbd> `fmt_json`
@@ -64,7 +82,7 @@ fmt_json.
 
 ---
 
-<a href="../src/pyquanda/hooks/__init__.py#L51"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../src/pyquanda/hooks/__init__.py#L60"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ### <kbd>method</kbd> `send`
 

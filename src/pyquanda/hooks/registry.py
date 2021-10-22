@@ -12,12 +12,15 @@ from pyquanda.hooks import Hook
 from pyquanda.hooks.config import (
     CONFIG_REQS,
     DEST_TYPE_EXECUTABLE,
+    DEST_TYPE_SLACK_WEBHOOK,
     DEST_TYPE_WEBHOOK_NO_AUTH,
     HOOK_TYPE_ALL,
     VALID_HOOK_TYPES,
-    EMITTER,
+    ASYNC_EMITTER,
+    SYNC_EMITTER,
 )
 from pyquanda.hooks.dest_types.executable import ExecutableDest
+from pyquanda.hooks.dest_types.slack_webhook import SlackWebhook
 from pyquanda.hooks.dest_types.webhook_no_auth import WebHookNoAuth
 
 yaml = YAML()
@@ -25,6 +28,7 @@ yaml = YAML()
 DEST_MAP = {
     DEST_TYPE_EXECUTABLE: ExecutableDest,
     DEST_TYPE_WEBHOOK_NO_AUTH: WebHookNoAuth,
+    DEST_TYPE_SLACK_WEBHOOK: SlackWebhook,
 }
 
 
@@ -44,7 +48,6 @@ class HookLoader:
             hooks = data.pop("hooks")
         except KeyError as _e:
             return
-
         for i in hooks:
             for key in CONFIG_REQS:
                 try:
@@ -57,7 +60,6 @@ class HookLoader:
             config = i["config"]
             evt_type = i["event_type"]
             dtype = i["dest_type"]
-
             if evt_type not in VALID_HOOK_TYPES:
                 msg = ",".join(VALID_HOOK_TYPES)
                 raise PreCheckFail(f"{evt_type} is not in {msg}")
@@ -67,8 +69,10 @@ class HookLoader:
                     if z == HOOK_TYPE_ALL:
                         continue
                     dest = DEST_MAP[dtype](z, config)  # type: Hook
-                    EMITTER.on(z, dest.send)
+                    ASYNC_EMITTER.on(z, dest.async_send)
+                    SYNC_EMITTER.on(z, dest.send)
             else:
                 dest = DEST_MAP[dtype](evt_type, config)  # type: Hook
-                EMITTER.on(evt_type, dest.send)
+                ASYNC_EMITTER.on(evt_type, dest.async_send)
+                SYNC_EMITTER.on(evt_type, dest.send)
         cls.LOADED = True

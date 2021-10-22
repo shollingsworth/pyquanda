@@ -12,12 +12,12 @@ Executable type.
 
 ---
 
-<a href="../src/pyquanda/hooks/dest_types/executable.py#L18"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../src/pyquanda/hooks/dest_types/executable.py#L20"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>class</kbd> `ExecutableDest`
 ExecutableDest. 
 
-<a href="../src/pyquanda/hooks/dest_types/executable.py#L21"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../src/pyquanda/hooks/dest_types/executable.py#L23"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ### <kbd>method</kbd> `__init__`
 
@@ -49,7 +49,21 @@ __init__.
 
 ---
 
-<a href="../src/pyquanda/hooks/dest_types/executable.py#L47"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../src/pyquanda/hooks/dest_types/executable.py#L56"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+
+### <kbd>method</kbd> `async_send`
+
+```python
+async_send(dct: Dict)
+```
+
+
+
+
+
+---
+
+<a href="../src/pyquanda/hooks/dest_types/executable.py#L62"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ### <kbd>method</kbd> `send`
 

@@ -1,0 +1,35 @@
+{
+    "blocks": [
+        {
+            "type": "divider"
+        },
+        {
+            "type": "header",
+            "text": {
+                "type": "plain_text",
+                "text": ":white_check_mark: Answer entered",
+                "emoji": true
+            }
+        },
+        {
+            "type": "divider"
+        },
+        {
+            "type": "section",
+            "text": {
+                "type": "mrkdwn",
+                "text": "{{event.answer | code | jstr}}"
+            }
+        },
+        {
+            "type": "divider"
+        },
+        {
+            "type": "section",
+            "text": {
+                "type": "mrkdwn",
+                "text": "{{vars.firstname | jstr}} {{vars.lastname | jstr}} / *{{event.description | jstr}}* - {{event.current_question | jstr}}"
+            }
+        }
+    ]
+}

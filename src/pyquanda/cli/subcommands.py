@@ -20,6 +20,7 @@ from pyquanda.environment import (
     INTERVIEW_CONFIG_REMOTE_FILE,
     MOCK_CONFIG,
     DEMO_DIR,
+    InterviewConfig,
 )
 from pyquanda.exceptions import PreCheckFail
 from pyquanda.host.question_data import QuestionCollection
@@ -51,6 +52,18 @@ def yesno(question: str) -> bool:
     if ans == "y":
         return True
     return False
+
+
+def _config_replace_if_arg_given(src_config: str):
+    """If defined in an argument, replace the the default runtime with the given path."""
+    path = Path(src_config)
+    if path == INTERVIEW_CONFIG_REMOTE_FILE:
+        return
+    if not path.exists():
+        raise PreCheckFail(f"{path} does not exist")
+    # kick the file to make sure it's valid
+    shutil.copy(src_config, INTERVIEW_CONFIG_REMOTE_FILE)
+    InterviewConfig().as_dict()
 
 
 class CreateNewModule:
@@ -106,7 +119,9 @@ class RunModule:
             "run ansible on a single module based on path",
             self.run,
         )
+        _pwrap.add_interview_config()
         _pwrap.add_src_module_directory()
+        _pwrap.add_debug()
         self.parser = _pwrap.parser
 
     @staticmethod
@@ -117,8 +132,9 @@ class RunModule:
             args (argparse.Namespace): args
         """
         src = Path(args.src_module_dir)
-        obj = Ansible(src)
-        obj.run()
+        if args.interview_config_yaml:
+            _config_replace_if_arg_given(args.interview_config_yaml)
+        Ansible.run_single(src, args.debug)
 
 
 class RunAllModules:
@@ -140,7 +156,9 @@ class RunAllModules:
             self.run,
         )
         self.parser = _pwrap.parser
+        _pwrap.add_interview_config()
         _pwrap.add_src_module_directory()
+        _pwrap.add_debug()
 
     @staticmethod
     def run(args: argparse.Namespace):
@@ -149,16 +167,10 @@ class RunAllModules:
         Args:
             args (argparse.Namespace): args
         """
+        if args.interview_config_yaml:
+            _config_replace_if_arg_given(args.interview_config_yaml)
         mod_path = Path(args.src_module_dir)
-        collection = []
-        for i in mod_path.iterdir():
-            if not i.is_dir():
-                continue
-            ans = Ansible(i)
-            collection.append(ans)
-
-        for mod in collection:
-            mod.run()
+        Ansible.run_all(mod_path, args.debug)
 
 
 class AssembleQuestions:
@@ -179,6 +191,7 @@ class AssembleQuestions:
             "convert questions to pyquanda questions config file",
             self.run,
         )
+        _pwrap.add_interview_config()
         _pwrap.add_src_module_directory()
         _pwrap.add_destination_directory(
             required=False, default=str(QUESTIONS_DATA.parent)
@@ -192,6 +205,8 @@ class AssembleQuestions:
         Args:
             args (argparse.Namespace): args
         """
+        if args.interview_config_yaml:
+            _config_replace_if_arg_given(args.interview_config_yaml)
         base_mod_path = Path(args.src_module_dir)
         for mod_path in base_mod_path.iterdir():
             if not mod_path.is_dir():
@@ -220,6 +235,7 @@ class TestQuestions:
             self.run,
         )
         _pwrap.add_src_module_directory()
+        _pwrap.add_interview_config()
         self.parser = _pwrap.parser
         self.parser.add_argument(
             "--keep_state",
@@ -239,6 +255,8 @@ class TestQuestions:
         Raises:
             SystemExit: if there is an issue
         """
+        if args.interview_config_yaml:
+            _config_replace_if_arg_given(args.interview_config_yaml)
         args.destination_directory = QUESTIONS_DATA.parent
         AssembleQuestions.run(args)
         if not XONSH_FILE.exists():
@@ -269,8 +287,9 @@ class Demo:
             "demonstrate the xonsh question environment",
             self.run,
         )
-        parser = _pwrap.parser
-        parser.add_argument("--hidden", help=argparse.SUPPRESS, default=None)
+        _pwrap.add_interview_config()
+        # parser = _pwrap.parser
+        # parser.add_argument("--hidden", help=argparse.SUPPRESS, default=None)
 
     @staticmethod
     def run(args: argparse.Namespace):
@@ -279,9 +298,12 @@ class Demo:
         Args:
             args (argparse.Namespace): args
         """
-        if INTERVIEW_STATE_REMOTE_FILE.exists():
-            INTERVIEW_STATE_REMOTE_FILE.unlink()
-        INTERVIEW_CONFIG_REMOTE_FILE.write_text(MOCK_CONFIG)
+        if args.interview_config_yaml:
+            _config_replace_if_arg_given(args.interview_config_yaml)
+        else:
+            if not INTERVIEW_STATE_REMOTE_FILE.exists():
+                INTERVIEW_CONFIG_REMOTE_FILE.write_text(MOCK_CONFIG)
+                INTERVIEW_CONFIG_REMOTE_FILE.chmod(0o0666)
         args.destination_directory = QUESTIONS_DATA.parent
         args.src_module_dir = DEMO_DIR
         AssembleQuestions.run(args)
@@ -310,6 +332,7 @@ class SaveUserData:
             "save userdata zip file in directory (filename: userdata.zip)",
             self.run,
         )
+        _pwrap.add_interview_config()
         _pwrap.add_src_module_directory()
         _pwrap.add_destination_directory(required=True)
         self.parser = _pwrap.parser
@@ -321,6 +344,8 @@ class SaveUserData:
         Args:
             args (argparse.Namespace): args
         """
+        if args.interview_config_yaml:
+            _config_replace_if_arg_given(args.interview_config_yaml)
         with UserDataScript(args.src_module_dir) as udata:
             dest_dir = Path(args.destination_directory)
             zfile = udata.zipfile()
@@ -348,6 +373,7 @@ class Bootstrap:
             "bootstrap host given userdata.zip file",
             self.run,
         )
+        _pwrap.add_interview_config()
         self.parser = _pwrap.parser
         self.parser.add_argument(
             "userdata_file",
@@ -363,6 +389,8 @@ class Bootstrap:
         Raises:
             SystemExit: on error
         """
+        if args.interview_config_yaml:
+            _config_replace_if_arg_given(args.interview_config_yaml)
         pzip = Path(args.userdata_file)
         if not pzip.exists():
             raise SystemExit(f"{pzip} file does not exist")

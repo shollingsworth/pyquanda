@@ -61,36 +61,44 @@ optional arguments:
 ```
 ## a_single
 ```
-usage: gendoc.py a_single [-h] -s SRC_MODULE_DIR
+usage: gendoc.py a_single [-h] [-c INTERVIEW_CONFIG_YAML] -s SRC_MODULE_DIR [--debug]
 
 run ansible on a single module based on path
 
 optional arguments:
   -h, --help            show this help message and exit
+  -c INTERVIEW_CONFIG_YAML, --interview_config_yaml INTERVIEW_CONFIG_YAML
+                        starting configuration yaml
   -s SRC_MODULE_DIR, --src_module_dir SRC_MODULE_DIR
                         source module directory
+  --debug               debug output, do not execute
 
 ```
 ## a_all
 ```
-usage: gendoc.py a_all [-h] -s SRC_MODULE_DIR
+usage: gendoc.py a_all [-h] [-c INTERVIEW_CONFIG_YAML] -s SRC_MODULE_DIR [--debug]
 
 run all ansible modules in path
 
 optional arguments:
   -h, --help            show this help message and exit
+  -c INTERVIEW_CONFIG_YAML, --interview_config_yaml INTERVIEW_CONFIG_YAML
+                        starting configuration yaml
   -s SRC_MODULE_DIR, --src_module_dir SRC_MODULE_DIR
                         source module directory
+  --debug               debug output, do not execute
 
 ```
 ## q_save
 ```
-usage: gendoc.py q_save [-h] -s SRC_MODULE_DIR [--destination_directory DESTINATION_DIRECTORY]
+usage: gendoc.py q_save [-h] [-c INTERVIEW_CONFIG_YAML] -s SRC_MODULE_DIR [--destination_directory DESTINATION_DIRECTORY]
 
 convert questions to pyquanda questions config file
 
 optional arguments:
   -h, --help            show this help message and exit
+  -c INTERVIEW_CONFIG_YAML, --interview_config_yaml INTERVIEW_CONFIG_YAML
+                        starting configuration yaml
   -s SRC_MODULE_DIR, --src_module_dir SRC_MODULE_DIR
                         source module directory
   --destination_directory DESTINATION_DIRECTORY, -d DESTINATION_DIRECTORY
@@ -99,7 +107,7 @@ optional arguments:
 ```
 ## q_test
 ```
-usage: gendoc.py q_test [-h] -s SRC_MODULE_DIR [--keep_state]
+usage: gendoc.py q_test [-h] -s SRC_MODULE_DIR [-c INTERVIEW_CONFIG_YAML] [--keep_state]
 
 test question set
 
@@ -107,17 +115,21 @@ optional arguments:
   -h, --help            show this help message and exit
   -s SRC_MODULE_DIR, --src_module_dir SRC_MODULE_DIR
                         source module directory
+  -c INTERVIEW_CONFIG_YAML, --interview_config_yaml INTERVIEW_CONFIG_YAML
+                        starting configuration yaml
   --keep_state, -k      keep state (defaults to False)
 
 ```
 ## userdata
 ```
-usage: gendoc.py userdata [-h] -s SRC_MODULE_DIR --destination_directory DESTINATION_DIRECTORY
+usage: gendoc.py userdata [-h] [-c INTERVIEW_CONFIG_YAML] -s SRC_MODULE_DIR --destination_directory DESTINATION_DIRECTORY
 
 save userdata zip file in directory (filename: userdata.zip)
 
 optional arguments:
   -h, --help            show this help message and exit
+  -c INTERVIEW_CONFIG_YAML, --interview_config_yaml INTERVIEW_CONFIG_YAML
+                        starting configuration yaml
   -s SRC_MODULE_DIR, --src_module_dir SRC_MODULE_DIR
                         source module directory
   --destination_directory DESTINATION_DIRECTORY, -d DESTINATION_DIRECTORY
@@ -126,7 +138,7 @@ optional arguments:
 ```
 ## bootstrap
 ```
-usage: gendoc.py bootstrap [-h] userdata_file
+usage: gendoc.py bootstrap [-h] [-c INTERVIEW_CONFIG_YAML] userdata_file
 
 bootstrap host given userdata.zip file
 
@@ -134,16 +146,20 @@ positional arguments:
   userdata_file
 
 optional arguments:
-  -h, --help     show this help message and exit
+  -h, --help            show this help message and exit
+  -c INTERVIEW_CONFIG_YAML, --interview_config_yaml INTERVIEW_CONFIG_YAML
+                        starting configuration yaml
 
 ```
 ## demo
 ```
-usage: gendoc.py demo [-h]
+usage: gendoc.py demo [-h] [-c INTERVIEW_CONFIG_YAML]
 
 demonstrate the xonsh question environment
 
 optional arguments:
-  -h, --help  show this help message and exit
+  -h, --help            show this help message and exit
+  -c INTERVIEW_CONFIG_YAML, --interview_config_yaml INTERVIEW_CONFIG_YAML
+                        starting configuration yaml
 
 ```

@@ -1,0 +1,13 @@
+---
+- name: test
+  command: uptime
+  changed_when: false
+
+- name: fail
+  command: foo
+  changed_when: false
+  ignore_errors: true
+
+- name: fail real
+  command: foo
+  changed_when: false

@@ -1,0 +1,4 @@
+---
+- name: test
+  command: uptime
+  changed_when: false

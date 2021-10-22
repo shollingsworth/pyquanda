@@ -51,6 +51,20 @@ __init__.
 
 <a href="../src/pyquanda/hooks/dest_types/webhook_no_auth.py#L42"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
+### <kbd>method</kbd> `async_send`
+
+```python
+async_send(dct: Dict)
+```
+
+
+
+
+
+---
+
+<a href="../src/pyquanda/hooks/dest_types/webhook_no_auth.py#L46"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+
 ### <kbd>method</kbd> `send`
 
 ```python

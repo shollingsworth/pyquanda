@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 """PyQ[u]AndA cli interface."""
 from pyquanda.cli import MainParser
+from pyquanda.exceptions import PreCheckFail
 from pyquanda.cli.subcommands import (
     CreateNewModule,
     RunModule,
@@ -26,7 +27,12 @@ Demo(parent)
 
 def main():
     """Run main function."""
-    parent.run()
+    try:
+        parent.run()
+    except PreCheckFail as _e:
+        raise SystemExit(_e) from _e
+    except KeyboardInterrupt:
+        print("Bye!")
 
 
 if __name__ == "__main__":

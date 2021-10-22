@@ -1,0 +1,8 @@
+---
+name:
+hosts: all
+become: false
+connection: local
+vars_files:
+  - /tmp/interview.yaml
+tasks: []

@@ -8,16 +8,16 @@
 - [`cli`](./cli.md#module-cli): common cli attributes.
 - [`cli.subcommands`](./cli.subcommands.md#module-clisubcommands): cli subcommands.
 - [`cli.templates`](./cli.templates.md#module-clitemplates): Templates for creating new modules.
-- [`environment`](./environment.md#module-environment): Environment variables and filepaths default.
+- [`environment`](./environment.md#module-environment): Environment variables, configuration and static filepaths.
 - [`exceptions`](./exceptions.md#module-exceptions): Exceptions for application.
 - [`hooks`](./hooks.md#module-hooks): base classes for hooks module.
 - [`hooks.config`](./hooks.config.md#module-hooksconfig): constants for module.
 - [`hooks.dest_types`](./hooks.dest_types.md#module-hooksdest_types)
 - [`hooks.dest_types.executable`](./hooks.dest_types.executable.md#module-hooksdest_typesexecutable): Executable type.
+- [`hooks.dest_types.slack_webhook`](./hooks.dest_types.slack_webhook.md#module-hooksdest_typesslack_webhook): Abstract method for other modules.
 - [`hooks.dest_types.webhook_no_auth`](./hooks.dest_types.webhook_no_auth.md#module-hooksdest_typeswebhook_no_auth): Executable type.
 - [`hooks.registry`](./hooks.registry.md#module-hooksregistry): response hook registry
 - [`host`](./host.md#module-host)
-- [`host.config`](./host.config.md#module-hostconfig): Abstract method for other modules.
 - [`host.intro`](./host.intro.md#module-hostintro): Introduction builder.
 - [`host.main_intro_data`](./host.main_intro_data.md#module-hostmain_intro_data): Question data interfaces.
 - [`host.mods`](./host.mods.md#module-hostmods): Abstract method for other modules.
@@ -46,9 +46,10 @@
 - [`exceptions.PreCheckFail`](./exceptions.md#class-precheckfail): Throw if Terraform precheck fails.
 - [`hooks.Hook`](./hooks.md#class-hook): BaseHookType.
 - [`executable.ExecutableDest`](./hooks.dest_types.executable.md#class-executabledest): ExecutableDest.
+- [`slack_webhook.SlackSend`](./hooks.dest_types.slack_webhook.md#class-slacksend): Send slack messages to ops-interviews channel.
+- [`slack_webhook.SlackWebhook`](./hooks.dest_types.slack_webhook.md#class-slackwebhook): WebHookNoAuth.
 - [`webhook_no_auth.WebHookNoAuth`](./hooks.dest_types.webhook_no_auth.md#class-webhooknoauth): WebHookNoAuth.
 - [`registry.HookLoader`](./hooks.registry.md#class-hookloader): Loader.
-- [`config.Status`](./host.config.md#class-status): Status.
 - [`intro.Intro`](./host.intro.md#class-intro): Intro.
 - [`main_intro_data.MainIntroCollection`](./host.main_intro_data.md#class-mainintrocollection): MainIntroCollection.
 - [`main_intro_data.MainIntroData`](./host.main_intro_data.md#class-mainintrodata): MainIntroData.

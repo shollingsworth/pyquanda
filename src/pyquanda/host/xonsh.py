@@ -15,12 +15,12 @@ from xonsh.events import events
 from xonsh.procs.specs import SubprocSpec
 
 from pyquanda.hooks.config import (
+    ASYNC_EMITTER,
     HOOK_TYPE_QUESTIONABLE,
     HOOK_TYPE_ANSWER,
     HOOK_TYPE_XONSH_COMMAND_ENTERED,
 )
 from pyquanda.hooks.registry import HookLoader
-from pyquanda.hooks.config import EMITTER
 from pyquanda.host.nav import NavFooter, Navigation
 
 RESTRICTED = ["bash", "sh", "zsh", "sudo"]
@@ -31,6 +31,7 @@ SUDO_OK = [
     "ss",
     "lsof",
     "ls",
+    "iptables",
 ]
 
 
@@ -44,7 +45,7 @@ def height():
     return shutil.get_terminal_size((80, 20)).lines
 
 
-MAX_ANSWER_LEN = 500
+MAX_ANSWER_LEN = 2000
 
 
 def twrap(content: str) -> str:
@@ -152,8 +153,7 @@ class QuestionPrompt:
             self.nav.introduction.run()
             self.nav.seen_intro = True
 
-    @staticmethod
-    def answer(args: List, stdin: Optional[TextIOWrapper] = None):
+    def answer(self, args: List, stdin: Optional[TextIOWrapper] = None):
         """answer.
 
         Args:
@@ -167,11 +167,20 @@ class QuestionPrompt:
 
         if len(soutput) > MAX_ANSWER_LEN:
             soutput = soutput[:MAX_ANSWER_LEN] + "[...]"
-        s_dict = {
-            "answer": soutput,
-        }
-        EMITTER.emit(HOOK_TYPE_ANSWER, s_dict)
+
+        self.emit(
+            HOOK_TYPE_ANSWER,
+            {
+                "answer": soutput,
+            },
+        )
         print(f"Sent:\n{color(soutput, bg='red')}")
+
+    def emit(self, emit_type: str, dct: Dict):
+        """Emit helper."""
+        retdct = dct.copy()
+        retdct.update(self.nav.as_dict())
+        ASYNC_EMITTER.emit(emit_type, retdct)
 
     def command_entered(self, **kwargs):
         """command_entered.
@@ -183,17 +192,24 @@ class QuestionPrompt:
         if command in self.map_list():
             return
         spl = command.split()
+
+        if self.is_questionable(spl):
+            htype = HOOK_TYPE_QUESTIONABLE
+        else:
+            htype = HOOK_TYPE_XONSH_COMMAND_ENTERED
+
         if spl[0] not in self._all_aliases:
             start, end = kwargs.get("ts") or (0, 0)
             time = end - start
-            send_d = {
-                "command": command,
-                "rc": kwargs.get("rtn"),
-                "output": kwargs.get("out"),
-                "time": f"{time:.3f}",
-            }
-            send_d.update(self.nav.as_dict())
-            EMITTER.emit(HOOK_TYPE_XONSH_COMMAND_ENTERED, send_d)
+            self.emit(
+                htype,
+                {
+                    "command": command,
+                    "rc": kwargs.get("rtn"),
+                    "output": kwargs.get("out"),
+                    "time": f"{time:.3f}",
+                },
+            )
 
     @staticmethod
     def prompt() -> str:
@@ -268,6 +284,24 @@ class QuestionPrompt:
             self.nav, passed_map, self.show_toolbar, self.show_commands
         )
 
+    @staticmethod
+    def is_questionable(cmd_arr: List) -> bool:
+        """is_questionable.
+
+        Args:
+            cmd_arr (List): cmd_arr
+
+        Returns:
+            bool: returns true if command is questionable
+        """
+        _bin = cmd_arr[0]
+        return any(
+            [
+                (_bin == "sudo" and cmd_arr[1] not in SUDO_OK),
+                (_bin in RESTRICTED and _bin != "sudo"),
+            ]
+        )
+
 
 # notice the decorators, these are restricted command
 # dummy decorator for dynamically filtering commands see RESTRICTED variable
@@ -284,12 +318,6 @@ def bash_filter(**kwargs) -> None:
     spec = kwargs["spec"]  # type: SubprocSpec
     xsh = globals()["__builtins__"]["__xonsh__"]
     iface = xsh.env["SELF"]  # type: QuestionPrompt
-    run_cmd = " ".join(spec.cmd)
-    send_d = {
-        "command": run_cmd,
-    }
-    send_d.update(iface.nav.as_dict())
-    EMITTER.emit(HOOK_TYPE_QUESTIONABLE, send_d)
     cstr = " ".join(
         [
             chr(127367),
@@ -297,14 +325,7 @@ def bash_filter(**kwargs) -> None:
         ]
     )
     repl_seq = ["echo", color(cstr, bg="red")]
-    _bin = spec.cmd[0]
-    rest_conds = any(
-        [
-            (_bin == "sudo" and spec.cmd[1] not in SUDO_OK),
-            (_bin in RESTRICTED and _bin != "sudo"),
-        ]
-    )
-    if rest_conds:
+    if iface.is_questionable(spec.cmd):
         spec.cmd = repl_seq
 
 

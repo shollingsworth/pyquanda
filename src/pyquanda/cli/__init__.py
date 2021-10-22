@@ -4,7 +4,7 @@
 from argparse import ArgumentParser, RawDescriptionHelpFormatter
 from typing import Callable, Dict, List
 
-from pyquanda.environment import REMOTE_BASE_PATH
+from pyquanda.environment import REMOTE_BASE_PATH, INTERVIEW_CONFIG_REMOTE_FILE
 
 from pyquanda.cli.templates import TYPES as _MAP
 
@@ -70,6 +70,15 @@ class ParserWrap:
             type=str,
         )
 
+    def add_debug(self):
+        """add_no_overwrite."""
+        self.parser.add_argument(
+            "--debug",
+            action="store_true",
+            help="debug output, do not execute",
+            default=False,
+        )
+
     def add_no_overwrite(self):
         """add_no_overwrite."""
         self.parser.add_argument(
@@ -94,6 +103,24 @@ class ParserWrap:
             help="source module directory",
             required=req,
             default=def_dir,
+            type=str,
+        )
+
+    def add_interview_config(self):
+        """add_interview_config."""
+        if INTERVIEW_CONFIG_REMOTE_FILE.exists():
+            req = False
+            def_path = INTERVIEW_CONFIG_REMOTE_FILE
+        else:
+            req = True
+            def_path = None
+
+        self.parser.add_argument(
+            "-c",
+            "--interview_config_yaml",
+            help="starting configuration yaml",
+            required=req,
+            default=def_path,
             type=str,
         )
 

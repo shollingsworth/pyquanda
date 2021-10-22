@@ -2,7 +2,9 @@ include VERSION
 include README.md
 include .pypyreadme
 include requirements.txt
+
 global-exclude *.pyc
+
 global-include *.json
 global-include *.yaml
 global-include *.yml

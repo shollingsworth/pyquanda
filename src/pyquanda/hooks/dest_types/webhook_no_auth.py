@@ -3,9 +3,9 @@
 """Executable type."""
 
 from typing import Dict
-
 import requests
-import validators
+import aiohttp
+import validators  # pylint: disable=import-error
 from pyquanda.environment import INTERVIEW_CONFIG_REMOTE_FILE
 from pyquanda.exceptions import PreCheckFail
 from pyquanda.hooks import Hook
@@ -38,6 +38,10 @@ class WebHookNoAuth(Hook):
         if not validators.url(_url):
             raise PreCheckFail(f"{_url} is not a valid url")
         self.url = _url
+
+    async def async_send(self, dct: Dict):
+        async with aiohttp.ClientSession() as sess:
+            await sess.post(self.url, json=self.fmt_json(dct))
 
     def send(self, dct: Dict):
         """send.

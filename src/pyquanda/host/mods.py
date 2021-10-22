@@ -11,7 +11,7 @@ from typing import Any, Dict, Iterator, List, Tuple
 
 from pyquanda.environment import InterviewConfig
 from pyquanda.exceptions import PreCheckFail
-from pyquanda.host.config import LOG, Status
+from pyquanda.environment import LOG
 from pyquanda.host.intro import Intro, intro_export_b64
 from pyquanda.host.main_intro_data import MainIntroData
 from pyquanda.host.question_data import QuestionData
@@ -63,7 +63,6 @@ class BaseModule(ABC):
                 f"{cfile} key {key} needs to be an integer"
             ) from _e
 
-        self.status = Status()
         self.name = self.path.name
         self.template_path = self.path.joinpath("templates")
         self.state = StateData()

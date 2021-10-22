@@ -1,0 +1,22 @@
+---
+quanda_id: xxxxxxxxxxxxxxxx
+firstname: John
+lastname: Doe
+fqdn: demo.test.local
+hooks:
+  - dest_type: slack_webhook
+    event_type: all
+    config:
+      slack_webhook_url: https://hooks.slack.com/services/xxxx/xxxx/xxxx
+      template_dir: /tmp/slack_templates
+  - dest_type: webhook_no_auth
+    event_type: all
+    config:
+      url: http://localhost:8000
+
+  - dest_type: executable
+    event_type: all
+    config:
+      path: /home/shollingsworth/bin/testhook.sh
+
+demo_path: /home/shollingsworth/prepos/pyquanda/src/pyquanda/demo

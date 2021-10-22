@@ -1,0 +1,6 @@
+---
+restricted_commands:
+  - /usr/bin/su
+  - /usr/bin/bash
+  - /usr/bin/sh
+  - /usr/bin/less

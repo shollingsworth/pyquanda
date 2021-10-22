@@ -13,7 +13,6 @@ Main Ansible Module Builder.
 - **SUPRESS_OUTPUT**
 - **EVENT_FAILURE**
 - **EVENT_OK**
-- **EVENT_RUNBOOK_DONE**
 
 
 ---
@@ -23,33 +22,12 @@ Main Ansible Module Builder.
 ## <kbd>class</kbd> `Ansible`
 Ansible. 
 
-<a href="../src/pyquanda/ansible/__init__.py#L55"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
-
-### <kbd>method</kbd> `__init__`
-
-```python
-__init__(path: Path) → None
-```
-
-__init__. 
-
-
-
-**Args:**
- 
- - <b>`path`</b> (Path):  path 
-
-
-
-**Returns:**
- None: 
-
 
 
 
 ---
 
-<a href="../src/pyquanda/ansible/__init__.py#L121"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../src/pyquanda/ansible/__init__.py#L95"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ### <kbd>classmethod</kbd> `copy_dirs`
 
@@ -72,52 +50,41 @@ copy_dirs.
 
 ---
 
-<a href="../src/pyquanda/ansible/__init__.py#L90"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../src/pyquanda/ansible/__init__.py#L56"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
-### <kbd>method</kbd> `event_handler`
+### <kbd>classmethod</kbd> `event_handler`
 
 ```python
-event_handler(evt_dct: Dict)
+event_handler(evt_dct: Dict) → bool
 ```
 
-event_handler. 
 
 
 
-**Args:**
- 
- - <b>`evt_dct`</b> (Dict):  evt_dct 
 
 ---
 
-<a href="../src/pyquanda/ansible/__init__.py#L170"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../src/pyquanda/ansible/__init__.py#L281"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
-### <kbd>method</kbd> `run`
+### <kbd>classmethod</kbd> `run_all`
 
 ```python
-run()
+run_all(modules_directory: Path, debug_only: bool)
 ```
 
 run. 
 
 ---
 
-<a href="../src/pyquanda/ansible/__init__.py#L72"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../src/pyquanda/ansible/__init__.py#L144"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
-### <kbd>method</kbd> `status_handler`
+### <kbd>classmethod</kbd> `run_single`
 
 ```python
-status_handler(args: Dict, **kwargs)
+run_single(module_path: Path, debug_only: bool)
 ```
 
-status_handler. 
-
-
-
-**Args:**
- 
- - <b>`args`</b>:  ansible event args 
- - <b>`kwargs`</b>:  Not used 
+run. 
 
 
 

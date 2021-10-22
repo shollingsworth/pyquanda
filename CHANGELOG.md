@@ -1,6 +1,20 @@
+# v1.0.9
+#### Bugfixes and  re-writes
+> 2021-10-22 19:16 UTC [HEAD](https://github.com/shollingsworth/pyquanda/commit/HEAD)
+
+```
+* Removed the host config.py section
+* added better error output for pyquanda-cmd cli tool
+* replaced pymitter with pyee
+* multiple edits to ansible base class
+* added hook and slack template samples
+* added ansible test sample
+* added slack_webhook type for hooks configuration
+```
+---
 # v1.0.8
 #### turned off suppress output so the ansible run boot process can be watched
-> 2021-10-21 06:40 UTC [HEAD](https://github.com/shollingsworth/pyquanda/commit/HEAD)
+> 2021-10-21 06:41 UTC [3661604](https://github.com/shollingsworth/pyquanda/commit/366160400365197223e574e5a79ac88c6dde8b24)
 
 ---
 # v1.0.7
