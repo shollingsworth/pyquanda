@@ -328,7 +328,7 @@ class ModulesCollection:
         """
         for i in cls.REGISTRY["all"].values():
             for z in i.network_ports:
-                yield z
+                yield z["type"], z["port"]
 
 
 class ModuleLoader:

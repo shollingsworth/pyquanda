@@ -1,6 +1,11 @@
+# v1.0.13
+#### Updated network ports iterator
+> 2021-10-23 02:28 UTC [HEAD](https://github.com/shollingsworth/pyquanda/commit/HEAD)
+
+---
 # v1.0.12
 #### Fixed bug in network port iteration
-> 2021-10-23 00:57 UTC [HEAD](https://github.com/shollingsworth/pyquanda/commit/HEAD)
+> 2021-10-23 00:57 UTC [2dad232](https://github.com/shollingsworth/pyquanda/commit/2dad232f817c91716075be493303eb7f6d32b5fc)
 
 #### Added "a" as an alias to answer
 > 2021-10-22 23:33 UTC [5c7e102](https://github.com/shollingsworth/pyquanda/commit/5c7e102aa45101e498d7028b382c04ede81cad71)

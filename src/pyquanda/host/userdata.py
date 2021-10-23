@@ -116,8 +116,8 @@ def main():
         zfile = udata.zipfile()
         print(zfile)
         shutil.copy(zfile, "/tmp/test.zip")
-        for i in udata.iter_network_ports():
-            print(i)
+        for proto, port in udata.iter_network_ports():
+            print(proto, port)
     QuestionCollection.export()
     MainIntroCollection.export()
 
