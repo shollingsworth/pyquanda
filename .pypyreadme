@@ -29,7 +29,7 @@ pip3 install pyquanda
 
 ```
 
-pyquandacmd demo
+pyquanda-cmd demo
 
 ```
 
@@ -42,7 +42,7 @@ See: [LICENSE](https://github.com/shollingsworth/pyquanda/blob/main/LICENSE)
 # Main
 ## new
 ```
-usage: gendoc.py new [-h] [--no_overwrite] --destination_directory DESTINATION_DIRECTORY {system,intro,problem} name description
+usage: gendoc.py new [-h] [--overwrite] --destination_directory DESTINATION_DIRECTORY {system,intro,problem} name description
 
 create a new module from templates
 
@@ -54,7 +54,7 @@ positional arguments:
 
 optional arguments:
   -h, --help            show this help message and exit
-  --no_overwrite        automatically overwrite destination directory
+  --overwrite           automatically overwrite destination directory
   --destination_directory DESTINATION_DIRECTORY, -d DESTINATION_DIRECTORY
                         src_module_dir help
 
@@ -122,7 +122,7 @@ optional arguments:
 ```
 ## userdata
 ```
-usage: gendoc.py userdata [-h] -c INTERVIEW_CONFIG_YAML -s SRC_MODULE_DIR --destination_directory DESTINATION_DIRECTORY
+usage: gendoc.py userdata [-h] [-c INTERVIEW_CONFIG_YAML] -s SRC_MODULE_DIR --destination_directory DESTINATION_DIRECTORY
 
 save userdata zip file in directory (filename: userdata.zip)
 
@@ -151,13 +151,14 @@ optional arguments:
 ```
 ## demo
 ```
-usage: gendoc.py demo [-h] [-c INTERVIEW_CONFIG_YAML]
+usage: gendoc.py demo [-h] [--destination_directory DESTINATION_DIRECTORY] [--overwrite]
 
 demonstrate the xonsh question environment
 
 optional arguments:
   -h, --help            show this help message and exit
-  -c INTERVIEW_CONFIG_YAML, --interview_config_yaml INTERVIEW_CONFIG_YAML
-                        starting configuration yaml
+  --destination_directory DESTINATION_DIRECTORY, -d DESTINATION_DIRECTORY
+                        src_module_dir help
+  --overwrite           automatically overwrite destination directory
 
 ```

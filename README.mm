@@ -85,7 +85,7 @@
   </body>
 </html>
 </richcontent>
-<node TEXT="Installation / Quickstart" POSITION="right" ID="ID_143871825" CREATED="1629902324496" MODIFIED="1634659334162">
+<node TEXT="Installation / Quickstart" POSITION="right" ID="ID_143871825" CREATED="1629902324496" MODIFIED="1635024340540">
 <edge COLOR="#ff0000"/>
 <richcontent TYPE="NOTE">
 
@@ -116,13 +116,14 @@
       ```
     </p>
     <p>
-      pyquandacmd demo
+      pyquanda-cmd demo
     </p>
     <p>
       ```
     </p>
   </body>
 </html>
+
 </richcontent>
 </node>
 <node TEXT="License" POSITION="right" ID="ID_1578673671" CREATED="1629902379529" MODIFIED="1629902575114">
@@ -158,7 +159,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 <node TEXT="Command Help" POSITION="right" ID="ID_433247386" CREATED="1629929022711" MODIFIED="1632178535891">

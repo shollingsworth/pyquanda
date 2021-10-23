@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """PyQ[u]AndA cli interface."""
+import traceback
 from pyquanda.cli import MainParser
 from pyquanda.exceptions import PreCheckFail
 from pyquanda.cli.subcommands import (
@@ -30,7 +31,13 @@ def main():
     try:
         parent.run()
     except PreCheckFail as _e:
-        raise SystemExit(_e) from _e
+        msg = "\n".join(
+            [
+                str(_e),
+                str(traceback.format_exc()),
+            ]
+        )
+        raise SystemExit(msg) from _e
     except KeyboardInterrupt:
         print("Bye!")
 

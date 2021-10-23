@@ -5,3 +5,6 @@ tmp/
 **/*.egg-info
 todo.txt
 test/
+.in
+.out
+.python-version

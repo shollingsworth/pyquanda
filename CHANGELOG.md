@@ -1,6 +1,15 @@
+# v1.0.14
+#### Demo subcommand bugfix
+> 2021-10-23 21:26 UTC [HEAD](https://github.com/shollingsworth/pyquanda/commit/HEAD)
+
+```
+* Added dev_requirements
+* added trace to cli error
+```
+---
 # v1.0.13
 #### Updated network ports iterator
-> 2021-10-23 02:28 UTC [HEAD](https://github.com/shollingsworth/pyquanda/commit/HEAD)
+> 2021-10-23 02:28 UTC [55ecc6d](https://github.com/shollingsworth/pyquanda/commit/55ecc6dec71c5d6493c72eb659a9499fdba5b467)
 
 ---
 # v1.0.12

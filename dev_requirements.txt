@@ -1,0 +1,3 @@
+freeplane-tools==0.0.14
+lazydocs==0.4.8
+ansible-lint[yamllint]

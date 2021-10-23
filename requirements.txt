@@ -1,11 +1,9 @@
-ansible-lint[yamllint]
 ansicolors>=1.1.8
 xonsh[full]>=0.10.0
 Jinja2>=3.0.1
 filelock>=3.0.12
 rich>=10.12.0
 sqlitedict>=1.7.0
-dacite==1.6.0
 ruamel.yaml==0.17.16
 ansible==4.7.0
 ansible-runner==2.0.2

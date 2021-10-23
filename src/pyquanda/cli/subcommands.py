@@ -84,19 +84,16 @@ class CreateNewModule:
         _pwrap.add_arg_type()
         _pwrap.add_arg_name()
         _pwrap.add_arg_description()
-        _pwrap.add_no_overwrite()
+        _pwrap.add_overwrite()
         _pwrap.add_destination_directory(default=".", required=True)
         self.parser = _pwrap.parser
 
     @staticmethod
     def create_new_module(args: argparse.Namespace):
         """Run main function."""
-        try:
-            dst = Path(args.destination_directory)
-            copy_type(args.type, dst, args.name, args.description)
-            print(f"{dst.absolute()} created!")
-        except PreCheckFail as _e:
-            raise SystemExit(_e) from _e
+        dst = Path(args.destination_directory)
+        copy_type(args.type, dst, args.name, args.description)
+        print(f"{dst.absolute()} created!")
 
 
 class RunModule:
@@ -283,9 +280,10 @@ class Demo:
             "demonstrate the xonsh question environment",
             self.run,
         )
-        _pwrap.add_interview_config()
-        # parser = _pwrap.parser
-        # parser.add_argument("--hidden", help=argparse.SUPPRESS, default=None)
+        parser = _pwrap.parser
+        _pwrap.add_destination_directory(required=False)
+        _pwrap.add_overwrite()
+        parser.add_argument("--hidden", help=argparse.SUPPRESS, default=None)
 
     @staticmethod
     def run(args: argparse.Namespace):
@@ -294,20 +292,43 @@ class Demo:
         Args:
             args (argparse.Namespace): args
         """
-        if args.interview_config_yaml:
-            _config_replace_if_arg_given(args.interview_config_yaml)
-        else:
-            if not INTERVIEW_STATE_REMOTE_FILE.exists():
-                INTERVIEW_CONFIG_REMOTE_FILE.write_text(MOCK_CONFIG)
-                INTERVIEW_CONFIG_REMOTE_FILE.chmod(0o0666)
+        INTERVIEW_CONFIG_REMOTE_FILE.write_text(MOCK_CONFIG)
+        if INTERVIEW_STATE_REMOTE_FILE.exists():
+            INTERVIEW_STATE_REMOTE_FILE.unlink()
         args.destination_directory = QUESTIONS_DATA.parent
         args.src_module_dir = DEMO_DIR
+        args.interview_config_yaml = INTERVIEW_CONFIG_REMOTE_FILE
         AssembleQuestions.run(args)
         with tempfile.TemporaryDirectory() as tdir:
             tempdir = Path(tdir)
+            shutil.copytree(args.src_module_dir, tempdir.joinpath("modules"))
+            shutil.copy(
+                args.interview_config_yaml,
+                tempdir.joinpath(args.interview_config_yaml.name),
+            )
             xonrc = tempdir.joinpath("xonshrc")
             xonrc.write_text(XONSH_TXT)
-            os.system(f"xonsh --rc {xonrc}")
+            xonsh_cmd = f"xonsh --rc {xonrc}"
+            os.system(xonsh_cmd)
+            ddir = args.destination_directory.joinpath(
+                "pyquanda_demo"
+            ).absolute()
+            save_msg = [
+                "Edit / run this again with",
+                f"pyquanda-cmd q_test -s {ddir}/modules -c"
+                f" {ddir}/interview.yaml",
+            ]
+            if ddir.exists():
+                if not args.overwrite:
+                    print(
+                        f"{args.destination_directory} exists, set"
+                        " --overwrite if you would like to overwrite"
+                    )
+                    return
+                shutil.rmtree(ddir)
+            shutil.copytree(tempdir, ddir)
+            print(f"Demo saved to: {ddir}")
+            print("\n".join(save_msg))
 
 
 class SaveUserData:

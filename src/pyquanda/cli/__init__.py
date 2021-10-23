@@ -79,13 +79,13 @@ class ParserWrap:
             default=False,
         )
 
-    def add_no_overwrite(self):
+    def add_overwrite(self):
         """add_no_overwrite."""
         self.parser.add_argument(
-            "--no_overwrite",
-            action="store_false",
+            "--overwrite",
+            action="store_true",
             help="automatically overwrite destination directory",
-            default=True,
+            default=False,
         )
 
     def add_src_module_directory(self):
@@ -109,13 +109,16 @@ class ParserWrap:
     def add_interview_config(self, required=False):
         """add_interview_config."""
         # explicitly required
-        if required:
-            req = True
-            def_path = None
-        # use existing in /tmp
-        elif INTERVIEW_CONFIG_REMOTE_FILE.exists():
+        if required is False:
             req = False
             def_path = INTERVIEW_CONFIG_REMOTE_FILE
+        elif required is True:
+            if INTERVIEW_CONFIG_REMOTE_FILE.exists():
+                req = False
+                def_path = INTERVIEW_CONFIG_REMOTE_FILE
+            else:
+                req = True
+                def_path = None
         # default to required
         else:
             req = True
