@@ -11,7 +11,6 @@ from pathlib import Path
 from pyquanda.environment import (
     INTERVIEW_CONFIG_REMOTE_FILE,
     REMOTE_BASE_PATH,
-    DEMO_DIR,
 )
 from pyquanda.exceptions import PreCheckFail
 from pyquanda.host.main_intro_data import MainIntroCollection
@@ -50,8 +49,8 @@ class UserDataScript:
             ModuleLoader.load(mod_path)
 
     @staticmethod
-    def iter_external_network_ports():
-        """iter_external_network_ports."""
+    def iter_network_ports():
+        """iter_network_ports."""
         for i in ModulesCollection.network_ports():
             yield i
 
@@ -111,11 +110,14 @@ class UserDataScript:
 def main():
     """Run main function."""
     with UserDataScript(
-        str(DEMO_DIR), str(INTERVIEW_CONFIG_REMOTE_FILE)
+        os.environ["PYINTERVIEW_MODULES"],
+        str(INTERVIEW_CONFIG_REMOTE_FILE),
     ) as udata:
         zfile = udata.zipfile()
         print(zfile)
         shutil.copy(zfile, "/tmp/test.zip")
+        for i in udata.iter_network_ports():
+            print(i)
     QuestionCollection.export()
     MainIntroCollection.export()
 

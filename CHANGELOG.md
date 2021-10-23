@@ -1,3 +1,33 @@
+# v1.0.12
+#### Fixed bug in network port iteration
+> 2021-10-23 00:57 UTC [HEAD](https://github.com/shollingsworth/pyquanda/commit/HEAD)
+
+#### Added "a" as an alias to answer
+> 2021-10-22 23:33 UTC [5c7e102](https://github.com/shollingsworth/pyquanda/commit/5c7e102aa45101e498d7028b382c04ede81cad71)
+
+---
+# v1.0.11
+#### Changed the way hooks are called / configured
+> 2021-10-22 23:21 UTC [bbd1179](https://github.com/shollingsworth/pyquanda/commit/bbd1179284d704686dedf420872b3eb832ef67c3)
+
+```
+* rolled hooks into userdata.zip and the source repo
+* adjusted some jinja2 slack filters
+* merged runbook complete and all complete
+* fixed question background process issue
+* added nav forward / previous hooks
+```
+#### Changed the way hooks are called / configured
+> 2021-10-22 23:21 UTC [88e7be3](https://github.com/shollingsworth/pyquanda/commit/88e7be34fbed7c0bda184b6751a528a8001a2b3c)
+
+```
+* rolled hooks into userdata.zip and the source repo
+* adjusted some jinja2 slack filters
+* merged runbook complete and all complete
+* fixed question background process issue
+* added nav forward / previous hooks
+```
+---
 # v1.0.10
 #### Changed the way hooks are called / configured
 > 2021-10-22 23:21 UTC [88e7be3](https://github.com/shollingsworth/pyquanda/commit/88e7be34fbed7c0bda184b6751a528a8001a2b3c)

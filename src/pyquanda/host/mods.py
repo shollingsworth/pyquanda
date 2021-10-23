@@ -326,8 +326,8 @@ class ModulesCollection:
         Yields:
             Tuple[str, int]
         """
-        for i in cls.REGISTRY["all"]:
-            for z in i.external_network_ports:
+        for i in cls.REGISTRY["all"].values():
+            for z in i.network_ports:
                 yield z
 
 
