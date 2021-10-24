@@ -7,7 +7,8 @@ from pathlib import Path
 from typing import Dict, List
 
 from jinja2 import Template
-from ruamel.yaml.main import YAML
+
+from pyquanda.lib.yaml_util import load_from_bytes, load_from_path
 
 logging.basicConfig()
 LOGFILE = Path("/tmp/pyquanda.log")
@@ -35,8 +36,6 @@ MOCK_CONFIG = "\n".join(
     MOCK_FILE.read_text().splitlines() + [f"demo_path: {DEMO_DIR}"]
 )
 
-_yaml = YAML()
-
 
 class InterviewConfig:
     """InterviewConfig."""
@@ -47,7 +46,7 @@ class InterviewConfig:
         Args:
             mod_path (Path): mod_path
         """
-        self.data = _yaml.load(
+        self.data = load_from_bytes(
             INTERVIEW_CONFIG_REMOTE_FILE.read_bytes()
         )  # type: Dict
         if mod_path is not None:
@@ -57,9 +56,9 @@ class InterviewConfig:
                 mod_path.joinpath("config.yaml").read_text()
             )
             if var_file.exists():
-                mod_vars = _yaml.load(var_file)
+                mod_vars = load_from_path(var_file)
                 comb_vars.update(mod_vars)
-            self.data = _yaml.load(j2_template.render(**comb_vars))
+            self.data = load_from_bytes(j2_template.render(**comb_vars))
 
     @property
     def username(self) -> str:

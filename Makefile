@@ -48,3 +48,9 @@ release: pkg upload push
 
 clean:
 	rm -rfv docs/* dist/* src/*.egg-info
+
+docker_test:
+	./scripts/docker_test.py 3.7
+	./scripts/docker_test.py 3.8
+	./scripts/docker_test.py 3.9
+	./scripts/docker_test.py 3.10

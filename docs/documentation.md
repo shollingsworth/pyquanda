@@ -27,6 +27,8 @@
 - [`host.registry`](./host.registry.md#module-hostregistry): Question data interfaces.
 - [`host.userdata`](./host.userdata.md#module-hostuserdata): Userdata / bootstrap module.
 - [`host.xonsh`](./host.xonsh.md#module-hostxonsh): XenSH question interface.
+- [`lib`](./lib.md#module-lib)
+- [`lib.yaml_util`](./lib.yaml_util.md#module-libyaml_util): Helper lib for yaml.
 
 ## Classes
 
@@ -83,6 +85,10 @@
 - [`xonsh.height`](./host.xonsh.md#function-height): height.
 - [`xonsh.twrap`](./host.xonsh.md#function-twrap): twrap.
 - [`xonsh.width`](./host.xonsh.md#function-width): width.
+- [`yaml_util.dump_to_file_open`](./lib.yaml_util.md#function-dump_to_file_open): dump_to_file_open.
+- [`yaml_util.dump_to_text`](./lib.yaml_util.md#function-dump_to_text): dump_to_text.
+- [`yaml_util.load_from_bytes`](./lib.yaml_util.md#function-load_from_bytes): load_from_bytes.
+- [`yaml_util.load_from_path`](./lib.yaml_util.md#function-load_from_path): load_from_path.
 
 
 ---

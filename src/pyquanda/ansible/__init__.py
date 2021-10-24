@@ -11,7 +11,6 @@ from pathlib import Path
 from typing import Dict, List
 
 import ansible_runner
-from ruamel.yaml import YAML
 
 from pyquanda.exceptions import PreCheckFail
 from pyquanda.hooks.registry import HookLoader
@@ -20,10 +19,9 @@ from pyquanda.hooks.config import (
     HOOK_TYPE_ANSIBLE_EVENT,
     HOOK_TYPE_ANSIBLE_RUNBOOK_COMPLETE,
 )
+from pyquanda.lib.yaml_util import dump_to_file_open, load_from_path
 
 _POP_KEYS = ["env", "ansible_facts"]
-
-_yaml = YAML()
 
 _BASE = Path(__file__).parent
 _SITE_PLAY_FILE = _BASE.joinpath("play.yaml")
@@ -150,7 +148,7 @@ class Ansible:
     def _get_sorted_module_paths(cls, paths: List[Path]) -> List[Path]:
         def _sort(path):
             cfg = path.joinpath("config.yaml")
-            obj = _yaml.load(cfg)
+            obj = load_from_path(cfg)
             return obj["order"]
 
         errors = []
@@ -171,12 +169,12 @@ class Ansible:
         var_file = path.joinpath("vars.yaml")
         config_file = path.joinpath("config.yaml")
 
-        cfg_obj = _yaml.load(config_file)  # type: Dict
+        cfg_obj = load_from_path(config_file)  # type: Dict
         if var_file.exists():
-            vobj = _yaml.load(var_file)
+            vobj = load_from_path(var_file)
             cfg_obj.update(vobj)
 
-        pb = _yaml.load(_SITE_PLAY_FILE.read_bytes())  # type: Dict
+        pb = load_from_path(_SITE_PLAY_FILE.read_bytes())  # type: Dict
         pb["name"] = path.name.title()
         task = {
             "block": [
@@ -254,7 +252,7 @@ class Ansible:
                 os.environ["ANSIBLE_CONFIG"] = str(cfg)
                 pb_file = tdir.joinpath("site.yaml")
                 with pb_file.open("wb") as fileh:
-                    _yaml.dump(playbooks, fileh)
+                    dump_to_file_open(playbooks, fileh)
                 # run status for the kickoff TODO
                 syspath = os.environ["PATH"]
                 syspath += ":/usr/local/bin"

@@ -12,15 +12,12 @@ import requests
 import aiohttp
 import validators  # pylint: disable=import-error
 from jinja2 import Template, environment as jenv
-from ruamel.yaml.main import YAML
 
 from pyquanda.environment import INTERVIEW_CONFIG_REMOTE_FILE, HOOK_DIR
 from pyquanda.exceptions import PreCheckFail
 from pyquanda.hooks import Hook
 from pyquanda.hooks.config import DEST_TYPE_SLACK_WEBHOOK
 from pyquanda.environment import LOG
-
-yaml = YAML()
 
 SLACK_HOOK_DIR = HOOK_DIR.joinpath(DEST_TYPE_SLACK_WEBHOOK)
 

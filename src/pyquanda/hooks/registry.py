@@ -4,8 +4,6 @@
 
 from typing import Dict
 
-from ruamel.yaml.main import YAML
-
 from pyquanda.environment import INTERVIEW_CONFIG_REMOTE_FILE
 from pyquanda.exceptions import PreCheckFail
 from pyquanda.hooks import Hook
@@ -22,8 +20,7 @@ from pyquanda.hooks.config import (
 from pyquanda.hooks.dest_types.executable import ExecutableDest
 from pyquanda.hooks.dest_types.slack_webhook import SlackWebhook
 from pyquanda.hooks.dest_types.webhook_no_auth import WebHookNoAuth
-
-yaml = YAML()
+from pyquanda.lib.yaml_util import load_from_path
 
 DEST_MAP = {
     DEST_TYPE_EXECUTABLE: ExecutableDest,
@@ -42,7 +39,7 @@ class HookLoader:
         """initialize class."""
         if cls.LOADED:
             return
-        data = yaml.load(INTERVIEW_CONFIG_REMOTE_FILE)  # type: Dict
+        data = load_from_path(INTERVIEW_CONFIG_REMOTE_FILE)  # type: Dict
         # no hooks defined
         try:
             hooks = data.pop("hooks")

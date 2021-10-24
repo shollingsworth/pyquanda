@@ -1,6 +1,14 @@
+# v1.0.15
+#### Made start of python3 version verification via docker images
+> 2021-10-24 19:36 UTC [HEAD](https://github.com/shollingsworth/pyquanda/commit/HEAD)
+
+```
+* switched from ruamel.yaml to pyyaml due to issues with python3.9
+```
+---
 # v1.0.14
 #### Demo subcommand bugfix
-> 2021-10-23 21:26 UTC [HEAD](https://github.com/shollingsworth/pyquanda/commit/HEAD)
+> 2021-10-23 21:26 UTC [d8ae3f0](https://github.com/shollingsworth/pyquanda/commit/d8ae3f02c6a4b41e5bb58da0bec7f7eb83ff59f2)
 
 ```
 * Added dev_requirements

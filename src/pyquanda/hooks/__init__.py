@@ -5,12 +5,10 @@
 import time
 from abc import ABC, abstractmethod
 from typing import Dict
+from pyquanda.lib.yaml_util import load_from_path
 
-from ruamel.yaml.main import YAML
 
 from pyquanda.environment import INTERVIEW_CONFIG_REMOTE_FILE
-
-yaml = YAML()
 
 
 class Hook(ABC):
@@ -27,7 +25,7 @@ class Hook(ABC):
             None:
         """
         self.name = name
-        self.vars = yaml.load(INTERVIEW_CONFIG_REMOTE_FILE)  # type: Dict
+        self.vars = load_from_path(INTERVIEW_CONFIG_REMOTE_FILE)  # type: Dict
         if "hooks" in self.vars:
             del self.vars["hooks"]
         self.config = config
