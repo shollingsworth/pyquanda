@@ -1,6 +1,11 @@
+# v1.0.17
+#### Fixed a typo in setup.py for extras
+> 2021-10-25 07:46 UTC [HEAD](https://github.com/shollingsworth/pyquanda/commit/HEAD)
+
+---
 # v1.0.16
 #### Made ansible an extra dependency
-> 2021-10-25 07:09 UTC [HEAD](https://github.com/shollingsworth/pyquanda/commit/HEAD)
+> 2021-10-25 07:09 UTC [bde8ee6](https://github.com/shollingsworth/pyquanda/commit/bde8ee6bfb062342757272b253a3496dfd29ce1f)
 
 ---
 # v1.0.15
