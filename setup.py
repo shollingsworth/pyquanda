@@ -16,4 +16,10 @@ setup(
         "bin/pyquanda-cmd",
     ],
     install_requires=REQS,
+    extra_require={
+        "ansible": [
+            "ansible-runner==2.0.2",
+            "ansible==4.7.0",
+        ],
+    },
 )

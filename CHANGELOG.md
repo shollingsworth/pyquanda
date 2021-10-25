@@ -1,6 +1,11 @@
+# v1.0.16
+#### Made ansible an extra dependency
+> 2021-10-25 07:09 UTC [HEAD](https://github.com/shollingsworth/pyquanda/commit/HEAD)
+
+---
 # v1.0.15
 #### Made start of python3 version verification via docker images
-> 2021-10-24 19:36 UTC [HEAD](https://github.com/shollingsworth/pyquanda/commit/HEAD)
+> 2021-10-24 19:37 UTC [80746c8](https://github.com/shollingsworth/pyquanda/commit/80746c87f9584e9ffe64d60f2718026b74ab4128)
 
 ```
 * switched from ruamel.yaml to pyyaml due to issues with python3.9
