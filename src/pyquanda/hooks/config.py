@@ -16,6 +16,7 @@ SYNC_EMITTER = _Emitter(asyncio.get_event_loop())
 DEST_TYPE_WEBHOOK_NO_AUTH = "webhook_no_auth"
 DEST_TYPE_EXECUTABLE = "executable"
 DEST_TYPE_SLACK_WEBHOOK = "slack_webhook"
+DEST_TYPE_AWS_API_GATEWAY = "aws_api_gateway"
 
 HOOK_TYPE_ALL = "all"
 HOOK_TYPE_ANSWER = "xonsh_answer"

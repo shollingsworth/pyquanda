@@ -1,6 +1,11 @@
+# v1.0.18
+#### Bugfix on yaml generation
+> 2021-10-26 15:20 UTC [HEAD](https://github.com/shollingsworth/pyquanda/commit/HEAD)
+
+---
 # v1.0.17
 #### Fixed a typo in setup.py for extras
-> 2021-10-25 07:46 UTC [HEAD](https://github.com/shollingsworth/pyquanda/commit/HEAD)
+> 2021-10-25 07:47 UTC [b7c8d00](https://github.com/shollingsworth/pyquanda/commit/b7c8d00395a4996ab4f8696a30e40ee28ecf1f22)
 
 ---
 # v1.0.16

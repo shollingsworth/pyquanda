@@ -174,7 +174,7 @@ class Ansible:
             vobj = load_from_path(var_file)
             cfg_obj.update(vobj)
 
-        pb = load_from_path(_SITE_PLAY_FILE.read_bytes())  # type: Dict
+        pb = load_from_path(_SITE_PLAY_FILE)  # type: Dict
         pb["name"] = path.name.title()
         task = {
             "block": [
@@ -251,7 +251,7 @@ class Ansible:
                 )
                 os.environ["ANSIBLE_CONFIG"] = str(cfg)
                 pb_file = tdir.joinpath("site.yaml")
-                with pb_file.open("wb") as fileh:
+                with pb_file.open("wt") as fileh:
                     dump_to_file_open(playbooks, fileh)
                 # run status for the kickoff TODO
                 syspath = os.environ["PATH"]
