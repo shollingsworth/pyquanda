@@ -1,6 +1,14 @@
+# v1.0.21
+#### Adjusted boto3 version to be less than 2
+> 2021-10-30 21:22 UTC [HEAD](https://github.com/shollingsworth/pyquanda/commit/HEAD)
+
+#### Straggler doc
+> 2021-10-30 21:02 UTC [9fffbcb](https://github.com/shollingsworth/pyquanda/commit/9fffbcbff7420edf6024487fee5f57fa1d25ea34)
+
+---
 # v1.0.20
 #### Updated requirements to include boto3
-> 2021-10-30 21:01 UTC [HEAD](https://github.com/shollingsworth/pyquanda/commit/HEAD)
+> 2021-10-30 21:01 UTC [f6bf50a](https://github.com/shollingsworth/pyquanda/commit/f6bf50a074ff15cee7d48877810708c552aced24)
 
 ```
 * changed some text in the question prompt
