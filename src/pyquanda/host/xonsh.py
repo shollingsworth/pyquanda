@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 """XenSH question interface."""
 import getpass
+from pathlib import Path
 import shutil
 import socket
 import subprocess
@@ -95,7 +96,9 @@ class QuestionPrompt:
         # pylint: disable=line-too-long
         self.map_list = lambda: [z for i in self.map_store.values() for z in i["aliases"]]  # type: ignore
         self._add_alias(
-            ["answer", "a"], "show answer as file or text", self.answer
+            ["answer", "a"],
+            "submit answer as string, file, or pipe",
+            self.answer,
         )
         if not self.nav.no_main_intro:
             self._add_alias(
@@ -158,7 +161,11 @@ class QuestionPrompt:
             stdin (Optional[TextIOWrapper]): stdin
         """
         if stdin is None:
-            soutput = " ".join(args)
+            file = Path(args[0])
+            if file.exists():
+                soutput = file.read_text(errors="backslashreplace")
+            else:
+                soutput = " ".join(args)
         else:
             soutput = stdin.read()  # type: ignore
 

@@ -1,6 +1,14 @@
+# v1.0.20
+#### Updated requirements to include boto3
+> 2021-10-30 21:01 UTC [HEAD](https://github.com/shollingsworth/pyquanda/commit/HEAD)
+
+```
+* changed some text in the question prompt
+```
+---
 # v1.0.19
 #### Added AWS Api Gateway type webhook
-> 2021-10-30 17:56 UTC [HEAD](https://github.com/shollingsworth/pyquanda/commit/HEAD)
+> 2021-10-30 17:56 UTC [d81ee7d](https://github.com/shollingsworth/pyquanda/commit/d81ee7d00895338f875cf62733d8b5e9fe01f2a5)
 
 ---
 # v1.0.18
