@@ -13,9 +13,7 @@ from pyquanda.environment import (
     REMOTE_BASE_PATH,
 )
 from pyquanda.exceptions import PreCheckFail
-from pyquanda.host.main_intro_data import MainIntroCollection
 from pyquanda.host.mods import ModuleLoader, ModulesCollection
-from pyquanda.host.question_data import QuestionCollection
 
 
 class UserDataScript:
@@ -105,22 +103,3 @@ class UserDataScript:
                     nfile = base.joinpath(exist.name)
                     zfile.write(os.path.join(root, file), arcname=nfile)
         return _zfile
-
-
-def main():
-    """Run main function."""
-    with UserDataScript(
-        os.environ["PYINTERVIEW_MODULES"],
-        str(INTERVIEW_CONFIG_REMOTE_FILE),
-    ) as udata:
-        zfile = udata.zipfile()
-        print(zfile)
-        shutil.copy(zfile, "/tmp/test.zip")
-        for proto, port in udata.iter_network_ports():
-            print(proto, port)
-    QuestionCollection.export()
-    MainIntroCollection.export()
-
-
-if __name__ == "__main__":
-    main()

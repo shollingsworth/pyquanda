@@ -1,6 +1,11 @@
+# v1.0.19
+#### Added AWS Api Gateway type webhook
+> 2021-10-30 17:56 UTC [HEAD](https://github.com/shollingsworth/pyquanda/commit/HEAD)
+
+---
 # v1.0.18
 #### Bugfix on yaml generation
-> 2021-10-26 15:20 UTC [HEAD](https://github.com/shollingsworth/pyquanda/commit/HEAD)
+> 2021-10-26 15:20 UTC [41fdfa2](https://github.com/shollingsworth/pyquanda/commit/41fdfa210b85f9e3594e304d54fd3d4ffdcd2f0e)
 
 ---
 # v1.0.17

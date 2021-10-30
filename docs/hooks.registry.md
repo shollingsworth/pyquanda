@@ -11,6 +11,7 @@ response hook registry
 - **DEST_TYPE_EXECUTABLE**
 - **DEST_TYPE_SLACK_WEBHOOK**
 - **DEST_TYPE_WEBHOOK_NO_AUTH**
+- **DEST_TYPE_AWS_API_GATEWAY**
 - **HOOK_TYPE_ALL**
 - **VALID_HOOK_TYPES**
 - **DEST_MAP**
@@ -18,7 +19,7 @@ response hook registry
 
 ---
 
-<a href="../src/pyquanda/hooks/registry.py#L32"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../src/pyquanda/hooks/registry.py#L35"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>class</kbd> `HookLoader`
 Loader. 
@@ -28,7 +29,7 @@ Loader.
 
 ---
 
-<a href="../src/pyquanda/hooks/registry.py#L37"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../src/pyquanda/hooks/registry.py#L40"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ### <kbd>classmethod</kbd> `load`
 

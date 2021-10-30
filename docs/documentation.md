@@ -13,6 +13,7 @@
 - [`hooks`](./hooks.md#module-hooks): base classes for hooks module.
 - [`hooks.config`](./hooks.config.md#module-hooksconfig): constants for module.
 - [`hooks.dest_types`](./hooks.dest_types.md#module-hooksdest_types)
+- [`hooks.dest_types.aws_api_gateway`](./hooks.dest_types.aws_api_gateway.md#module-hooksdest_typesaws_api_gateway): Aws API Gateway Hook
 - [`hooks.dest_types.executable`](./hooks.dest_types.executable.md#module-hooksdest_typesexecutable): Executable type.
 - [`hooks.dest_types.slack_webhook`](./hooks.dest_types.slack_webhook.md#module-hooksdest_typesslack_webhook): Abstract method for other modules.
 - [`hooks.dest_types.webhook_no_auth`](./hooks.dest_types.webhook_no_auth.md#module-hooksdest_typeswebhook_no_auth): Executable type.
@@ -47,6 +48,7 @@
 - [`exceptions.ErrorBadConfig`](./exceptions.md#class-errorbadconfig): Throw if the main configuration is bad.
 - [`exceptions.PreCheckFail`](./exceptions.md#class-precheckfail): Throw if Terraform precheck fails.
 - [`hooks.Hook`](./hooks.md#class-hook): BaseHookType.
+- [`aws_api_gateway.WebHookAwsApiGw`](./hooks.dest_types.aws_api_gateway.md#class-webhookawsapigw): WebHookNoAuth.
 - [`executable.ExecutableDest`](./hooks.dest_types.executable.md#class-executabledest): ExecutableDest.
 - [`slack_webhook.SlackSend`](./hooks.dest_types.slack_webhook.md#class-slacksend): Send slack messages to ops-interviews channel.
 - [`slack_webhook.SlackWebhook`](./hooks.dest_types.slack_webhook.md#class-slackwebhook): WebHookNoAuth.
@@ -79,7 +81,6 @@
 - [`intro.intro_load_pickle_b64`](./host.intro.md#function-intro_load_pickle_b64): intro_load_pickle_b64.
 - [`intro.show_all_colors`](./host.intro.md#function-show_all_colors): show_all_colors.
 - [`nav.color`](./host.nav.md#function-color): color.
-- [`userdata.main`](./host.userdata.md#function-main): Run main function.
 - [`xonsh.bash_filter`](./host.xonsh.md#function-bash_filter): bash_filter.
 - [`xonsh.cmd_event`](./host.xonsh.md#function-cmd_event): cmd_event.
 - [`xonsh.height`](./host.xonsh.md#function-height): height.

@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """Environment variables, configuration and static filepaths."""
+import os
 import logging
 import tempfile
 from pathlib import Path
@@ -22,9 +23,17 @@ LOG.addHandler(logging.FileHandler(filename=LOGFILE))
 REMOTE_BASE_PATH = Path("/opt/interview_env")
 _TMP = Path(tempfile.gettempdir())
 
-HOOK_DIR = REMOTE_BASE_PATH.joinpath("_hooks")
+HOOK_DIR = (
+    Path(os.environ["HOOK_DIR"])
+    if os.environ.get("HOOK_DIR")
+    else REMOTE_BASE_PATH.joinpath("_hooks")
+)
 LOCK_FILE = _TMP.joinpath("interview_locfile.lock")
-INTERVIEW_CONFIG_REMOTE_FILE = _TMP.joinpath("interview.yaml")
+INTERVIEW_CONFIG_REMOTE_FILE = (
+    Path(os.environ["INTERVIEW_CONFIG"])
+    if os.environ.get("INTERVIEW_CONFIG")
+    else _TMP.joinpath("interview.yaml")
+)
 QUESTIONS_DATA = _TMP.joinpath("questions.json")
 INTRO_DATA = _TMP.joinpath("intro.json")
 INTERVIEW_STATE_REMOTE_FILE = _TMP.joinpath("interview_state.sqlite")

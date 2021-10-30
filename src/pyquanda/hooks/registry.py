@@ -12,6 +12,7 @@ from pyquanda.hooks.config import (
     DEST_TYPE_EXECUTABLE,
     DEST_TYPE_SLACK_WEBHOOK,
     DEST_TYPE_WEBHOOK_NO_AUTH,
+    DEST_TYPE_AWS_API_GATEWAY,
     HOOK_TYPE_ALL,
     VALID_HOOK_TYPES,
     ASYNC_EMITTER,
@@ -20,11 +21,13 @@ from pyquanda.hooks.config import (
 from pyquanda.hooks.dest_types.executable import ExecutableDest
 from pyquanda.hooks.dest_types.slack_webhook import SlackWebhook
 from pyquanda.hooks.dest_types.webhook_no_auth import WebHookNoAuth
+from pyquanda.hooks.dest_types.aws_api_gateway import WebHookAwsApiGw
 from pyquanda.lib.yaml_util import load_from_path
 
 DEST_MAP = {
     DEST_TYPE_EXECUTABLE: ExecutableDest,
     DEST_TYPE_WEBHOOK_NO_AUTH: WebHookNoAuth,
+    DEST_TYPE_AWS_API_GATEWAY: WebHookAwsApiGw,
     DEST_TYPE_SLACK_WEBHOOK: SlackWebhook,
 }
 
