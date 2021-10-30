@@ -15,7 +15,7 @@ XenSH question interface.
 
 ---
 
-<a href="../src/pyquanda/host/xonsh.py#L29"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../src/pyquanda/host/xonsh.py#L30"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `width`
 
@@ -28,7 +28,7 @@ width.
 
 ---
 
-<a href="../src/pyquanda/host/xonsh.py#L34"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../src/pyquanda/host/xonsh.py#L35"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `height`
 
@@ -41,7 +41,7 @@ height.
 
 ---
 
-<a href="../src/pyquanda/host/xonsh.py#L42"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../src/pyquanda/host/xonsh.py#L43"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `twrap`
 
@@ -66,7 +66,7 @@ twrap.
 
 ---
 
-<a href="../src/pyquanda/host/xonsh.py#L305"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../src/pyquanda/host/xonsh.py#L312"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `bash_filter`
 
@@ -89,7 +89,7 @@ Restricted stuff is here
 
 ---
 
-<a href="../src/pyquanda/host/xonsh.py#L328"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../src/pyquanda/host/xonsh.py#L335"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `cmd_event`
 
@@ -110,12 +110,12 @@ cmd_event.
 
 ---
 
-<a href="../src/pyquanda/host/xonsh.py#L66"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../src/pyquanda/host/xonsh.py#L67"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>class</kbd> `QuestionPrompt`
 QuestionPrompt. 
 
-<a href="../src/pyquanda/host/xonsh.py#L69"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../src/pyquanda/host/xonsh.py#L70"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ### <kbd>method</kbd> `__init__`
 
@@ -130,7 +130,7 @@ __init__.
 
 ---
 
-<a href="../src/pyquanda/host/xonsh.py#L153"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../src/pyquanda/host/xonsh.py#L156"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ### <kbd>method</kbd> `answer`
 
@@ -149,7 +149,7 @@ answer.
 
 ---
 
-<a href="../src/pyquanda/host/xonsh.py#L141"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../src/pyquanda/host/xonsh.py#L144"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ### <kbd>method</kbd> `auto_intro`
 
@@ -161,7 +161,7 @@ auto_intro.
 
 ---
 
-<a href="../src/pyquanda/host/xonsh.py#L182"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../src/pyquanda/host/xonsh.py#L189"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ### <kbd>method</kbd> `command_entered`
 
@@ -181,7 +181,7 @@ command_entered.
 
 ---
 
-<a href="../src/pyquanda/host/xonsh.py#L176"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../src/pyquanda/host/xonsh.py#L183"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ### <kbd>method</kbd> `emit`
 
@@ -193,7 +193,7 @@ Emit helper.
 
 ---
 
-<a href="../src/pyquanda/host/xonsh.py#L284"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../src/pyquanda/host/xonsh.py#L291"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ### <kbd>method</kbd> `is_questionable`
 
@@ -217,7 +217,7 @@ is_questionable.
 
 ---
 
-<a href="../src/pyquanda/host/xonsh.py#L211"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../src/pyquanda/host/xonsh.py#L218"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ### <kbd>method</kbd> `prompt`
 
@@ -240,7 +240,7 @@ prompt.
 
 ---
 
-<a href="../src/pyquanda/host/xonsh.py#L256"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../src/pyquanda/host/xonsh.py#L263"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ### <kbd>method</kbd> `run_background_task`
 
@@ -252,7 +252,7 @@ start the process and send it into the background.
 
 ---
 
-<a href="../src/pyquanda/host/xonsh.py#L137"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../src/pyquanda/host/xonsh.py#L140"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ### <kbd>method</kbd> `toggle_command_show`
 
@@ -264,7 +264,7 @@ toggle_command_show.
 
 ---
 
-<a href="../src/pyquanda/host/xonsh.py#L133"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../src/pyquanda/host/xonsh.py#L136"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ### <kbd>method</kbd> `toggle_toolbar`
 
