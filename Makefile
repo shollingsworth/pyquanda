@@ -34,6 +34,7 @@ bump_version: pre_bump documentation
 	git add ./VERSION
 	git add ./.pypyreadme
 	git add ./README*
+	git add ./docs/*
 	git diff HEAD
 	git commit -S --amend
 	bash -c "git tag v$$(cat VERSION)"
