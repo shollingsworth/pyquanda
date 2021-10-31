@@ -1,6 +1,11 @@
+# v1.0.22
+#### Adjusted trimming on current questions
+> 2021-10-31 21:01 UTC [HEAD](https://github.com/shollingsworth/pyquanda/commit/HEAD)
+
+---
 # v1.0.21
 #### Adjusted boto3 version to be less than 2
-> 2021-10-30 21:22 UTC [HEAD](https://github.com/shollingsworth/pyquanda/commit/HEAD)
+> 2021-10-30 21:24 UTC [b006313](https://github.com/shollingsworth/pyquanda/commit/b00631344c4944d27b7c43318f6409af9c571e36)
 
 #### Straggler doc
 > 2021-10-30 21:02 UTC [9fffbcb](https://github.com/shollingsworth/pyquanda/commit/9fffbcbff7420edf6024487fee5f57fa1d25ea34)

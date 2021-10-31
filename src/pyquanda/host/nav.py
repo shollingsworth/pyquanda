@@ -284,7 +284,10 @@ class Navigation:
         Returns:
             str:
         """
-        return self.current_question_set[self.current_question_index]
+        val = self.current_question_set[
+            self.current_question_index
+        ]  # type: str
+        return val.rstrip()
 
     @property
     def has_previous_question(self):
