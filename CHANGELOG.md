@@ -1,6 +1,11 @@
+# v1.0.25
+#### Another bugfix
+> 2021-11-04 05:45 UTC [HEAD](https://github.com/shollingsworth/pyquanda/commit/HEAD)
+
+---
 # v1.0.24
 #### Bugfix with ansible ok events sent
-> 2021-11-04 05:06 UTC [HEAD](https://github.com/shollingsworth/pyquanda/commit/HEAD)
+> 2021-11-04 05:07 UTC [a24029f](https://github.com/shollingsworth/pyquanda/commit/a24029f745505e7829d7e70194eecedcd15cfa0a)
 
 ---
 # v1.0.23

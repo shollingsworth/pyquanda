@@ -11,6 +11,7 @@ from pathlib import Path
 from typing import Dict, List
 
 import ansible_runner
+from pyquanda.environment import LOG
 
 from pyquanda.exceptions import PreCheckFail
 from pyquanda.hooks.registry import HookLoader
@@ -271,14 +272,18 @@ class Ansible:
                 )
                 stats = {}
                 if run.stats:  # type: ignore
-                    for i in run.stats:  # type: ignore
-                        if i:
-                            for k, v in i.items():  # type: ignore
-                                stats[k] = (
-                                    0
-                                    if not v.values()
-                                    else list(v.values())[0]
-                                )
+                    try:
+                        for i in run.stats:  # type: ignore
+                            if i:
+                                for k, v in i.items():  # type: ignore
+                                    stats[k] = (
+                                        0
+                                        if not v.values()
+                                        else list(v.values())[0]
+                                    )
+                    # pylint: disable=broad-except
+                    except Exception as _e:
+                        LOG.info("Exception: %s", _e)
                 send_d = {
                     "status": run.status,  # type: ignore
                     "rc": run.rc,  # type: ignore

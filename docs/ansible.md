@@ -17,7 +17,7 @@ Main Ansible Module Builder.
 
 ---
 
-<a href="../src/pyquanda/ansible/__init__.py#L41"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../src/pyquanda/ansible/__init__.py#L42"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>class</kbd> `Ansible`
 Ansible. 
@@ -27,7 +27,7 @@ Ansible.
 
 ---
 
-<a href="../src/pyquanda/ansible/__init__.py#L93"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../src/pyquanda/ansible/__init__.py#L94"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ### <kbd>classmethod</kbd> `copy_dirs`
 
@@ -50,7 +50,7 @@ copy_dirs.
 
 ---
 
-<a href="../src/pyquanda/ansible/__init__.py#L54"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../src/pyquanda/ansible/__init__.py#L55"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ### <kbd>classmethod</kbd> `event_handler`
 
@@ -64,7 +64,7 @@ event_handler(evt_dct: Dict) → bool
 
 ---
 
-<a href="../src/pyquanda/ansible/__init__.py#L289"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../src/pyquanda/ansible/__init__.py#L294"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ### <kbd>classmethod</kbd> `run_all`
 
@@ -76,7 +76,7 @@ run.
 
 ---
 
-<a href="../src/pyquanda/ansible/__init__.py#L142"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../src/pyquanda/ansible/__init__.py#L143"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ### <kbd>classmethod</kbd> `run_single`
 
