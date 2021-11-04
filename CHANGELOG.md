@@ -1,6 +1,11 @@
+# v1.0.27
+#### Added Error handling to answer if no input given
+> 2021-11-04 20:07 UTC [HEAD](https://github.com/shollingsworth/pyquanda/commit/HEAD)
+
+---
 # v1.0.26
 #### Addded HOOK_TYPE_ENVIRONMENT_EXIT event
-> 2021-11-04 19:41 UTC [HEAD](https://github.com/shollingsworth/pyquanda/commit/HEAD)
+> 2021-11-04 19:43 UTC [8fdf00e](https://github.com/shollingsworth/pyquanda/commit/8fdf00ea1f21259ce550aabf59bdd4c4c82d09ad)
 
 ```
 Fixed strip bug introduced in yanked 1.0.21

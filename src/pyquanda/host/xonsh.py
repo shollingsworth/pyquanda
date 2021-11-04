@@ -97,9 +97,10 @@ class QuestionPrompt:
         self.map_store = {}  # type: Dict[str,Dict]
         # pylint: disable=line-too-long
         self.map_list = lambda: [z for i in self.map_store.values() for z in i["aliases"]]  # type: ignore
+        self.answer_txt = "submit answer as string, file, or pipe"
         self._add_alias(
             ["answer", "a"],
-            "submit answer as string, file, or pipe",
+            self.answer_txt,
             self.answer,
         )
         if not self.nav.no_main_intro:
@@ -172,11 +173,16 @@ class QuestionPrompt:
             stdin (Optional[TextIOWrapper]): stdin
         """
         if stdin is None:
-            file = Path(args[0])
-            if file.exists():
-                soutput = file.read_text(errors="backslashreplace")
-            else:
-                soutput = " ".join(args)
+            try:
+                file = Path(args[0])
+                if file.exists():
+                    soutput = file.read_text(errors="backslashreplace")
+                else:
+                    soutput = " ".join(args)
+            except IndexError:
+                print(color("No answer detected", bg="red"))
+                print(self.answer_txt)
+                return
         else:
             soutput = stdin.read()  # type: ignore
 
