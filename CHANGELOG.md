@@ -1,6 +1,14 @@
+# v1.0.26
+#### Addded HOOK_TYPE_ENVIRONMENT_EXIT event
+> 2021-11-04 19:41 UTC [HEAD](https://github.com/shollingsworth/pyquanda/commit/HEAD)
+
+```
+Fixed strip bug introduced in yanked 1.0.21
+```
+---
 # v1.0.25
 #### Another bugfix
-> 2021-11-04 05:45 UTC [HEAD](https://github.com/shollingsworth/pyquanda/commit/HEAD)
+> 2021-11-04 05:45 UTC [9686ca0](https://github.com/shollingsworth/pyquanda/commit/9686ca042d53ff7d96d71906e4aeacae760b7aa9)
 
 ---
 # v1.0.24

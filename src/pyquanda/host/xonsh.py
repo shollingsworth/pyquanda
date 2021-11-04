@@ -18,6 +18,7 @@ from pyquanda.environment import InterviewConfig
 
 from pyquanda.hooks.config import (
     ASYNC_EMITTER,
+    HOOK_TYPE_ENVIRONMENT_EXIT,
     HOOK_TYPE_NAV_NEXT,
     HOOK_TYPE_QUESTIONABLE,
     HOOK_TYPE_ANSWER,
@@ -80,6 +81,7 @@ class QuestionPrompt:
         self.nav = Navigation()
         self.xsh.env.update(
             {
+                "MOUSE_SUPPORT": False,
                 "XONSH_STORE_STDOUT": True,
                 "XONSH_SHOW_TRACEBACK": True,
                 "UPDATE_PROMPT_ON_KEYPRESS": True,
@@ -130,8 +132,17 @@ class QuestionPrompt:
             self.nav.go_previous,
             key="previous",
         )
+        self._add_alias(
+            ["end"],
+            "End Session",
+            self.session_end,
+        )
         self.hostname = socket.gethostname()
         self.user = getpass.getuser()
+
+    def session_end(self):
+        """End session."""
+        self.emit(HOOK_TYPE_ENVIRONMENT_EXIT, self.nav.as_dict())
 
     def toggle_toolbar(self):
         """toggle_toolbar."""

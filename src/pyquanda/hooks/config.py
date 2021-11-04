@@ -26,6 +26,8 @@ HOOK_TYPE_QUESTIONABLE = "questionable_activity"
 HOOK_TYPE_NAV_NEXT = "nav_next"
 HOOK_TYPE_NAV_PREVIOUS = "nav_previous"
 
+HOOK_TYPE_ENVIRONMENT_EXIT = "environment_exit"
+
 HOOK_TYPE_ANSIBLE_EVENT = "ansible_event"
 HOOK_TYPE_ANSIBLE_RUNBOOK_COMPLETE = "runbook_complete"
 

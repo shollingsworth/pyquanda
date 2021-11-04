@@ -258,7 +258,7 @@ seen_main_intro.
 
 ---
 
-<a href="../src/pyquanda/host/nav.py#L351"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../src/pyquanda/host/nav.py#L356"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ### <kbd>method</kbd> `as_dict`
 
@@ -281,7 +281,7 @@ as_dict.
 
 ---
 
-<a href="../src/pyquanda/host/nav.py#L323"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../src/pyquanda/host/nav.py#L320"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ### <kbd>method</kbd> `go_next`
 
@@ -293,7 +293,7 @@ next.
 
 ---
 
-<a href="../src/pyquanda/host/nav.py#L337"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../src/pyquanda/host/nav.py#L342"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ### <kbd>method</kbd> `go_previous`
 
@@ -306,7 +306,7 @@ previous.
 
 ---
 
-<a href="../src/pyquanda/host/nav.py#L380"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../src/pyquanda/host/nav.py#L385"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>class</kbd> `NavFooter`
 NavFooter. 
@@ -316,7 +316,7 @@ NavFooter.
 
 ---
 
-<a href="../src/pyquanda/host/nav.py#L383"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../src/pyquanda/host/nav.py#L388"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ### <kbd>method</kbd> `get`
 

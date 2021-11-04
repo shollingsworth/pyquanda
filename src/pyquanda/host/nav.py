@@ -284,10 +284,7 @@ class Navigation:
         Returns:
             str:
         """
-        val = self.current_question_set[
-            self.current_question_index
-        ]  # type: str
-        return val.rstrip()
+        return self.current_question_set[self.current_question_index]
 
     @property
     def has_previous_question(self):
@@ -330,7 +327,15 @@ class Navigation:
             self.current_question_index = 0
         else:
             do_hook = False
-            print(color("red", "No more modules or questions"))
+            print(
+                color(
+                    "red",
+                    "No more modules or questions, enter 'end' to end session",
+                )
+            )
+            print(
+                color("red", "The interviewer may have more questions to ask")
+            )
         if do_hook:
             ASYNC_EMITTER.emit(HOOK_TYPE_NAV_NEXT, self.as_dict())
 
