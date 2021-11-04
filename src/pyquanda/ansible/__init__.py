@@ -269,10 +269,16 @@ class Ansible:
                         "PATH": syspath,
                     },
                 )
-                stats = {
-                    k: 0 if not v.values() else list(v.values())[0]
-                    for k, v in run.stats.items()  # type: ignore
-                }
+                stats = {}
+                if run.stats:  # type: ignore
+                    for i in run.stats:  # type: ignore
+                        if i:
+                            for k, v in i.items():  # type: ignore
+                                stats[k] = (
+                                    0
+                                    if not v.values()
+                                    else list(v.values())[0]
+                                )
                 send_d = {
                     "status": run.status,  # type: ignore
                     "rc": run.rc,  # type: ignore

@@ -1,6 +1,11 @@
+# v1.0.24
+#### Bugfix with ansible ok events sent
+> 2021-11-04 05:06 UTC [HEAD](https://github.com/shollingsworth/pyquanda/commit/HEAD)
+
+---
 # v1.0.23
 #### Updated ansible webhook to fire on run ok and not only errors
-> 2021-11-04 04:23 UTC [HEAD](https://github.com/shollingsworth/pyquanda/commit/HEAD)
+> 2021-11-04 04:25 UTC [d9b7712](https://github.com/shollingsworth/pyquanda/commit/d9b771221557667f58c346419ffcdedd89e7a3f5)
 
 ```
 * Fixed bug with local generation of userdata when INTERVIEW_CONFIG_REMOTE_FILE isn't set
