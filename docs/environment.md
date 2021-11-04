@@ -154,7 +154,7 @@ username.
 
 ---
 
-<a href="../src/pyquanda/environment.py#L157"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../src/pyquanda/environment.py#L159"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ### <kbd>method</kbd> `as_dict`
 

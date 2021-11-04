@@ -55,6 +55,8 @@ class InterviewConfig:
         Args:
             mod_path (Path): mod_path
         """
+        if not INTERVIEW_CONFIG_REMOTE_FILE.exists():
+            INTERVIEW_CONFIG_REMOTE_FILE.write_text(MOCK_CONFIG)
         self.data = load_from_bytes(
             INTERVIEW_CONFIG_REMOTE_FILE.read_bytes()
         )  # type: Dict

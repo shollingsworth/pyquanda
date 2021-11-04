@@ -55,7 +55,7 @@ class Ansible:
     def event_handler(cls, evt_dct: Dict) -> bool:
         respond = [
             EVENT_FAILURE,
-            # EVENT_OK,
+            EVENT_OK,
         ]
         evt = evt_dct["event"]
         if evt not in respond:

@@ -8,3 +8,4 @@ test/
 .in
 .out
 .python-version
+.webhook

@@ -364,9 +364,9 @@ class SaveUserData:
         with UserDataScript(
             args.src_module_dir, args.interview_config_yaml
         ) as udata:
-            dest_dir = Path(args.destination_directory)
+            ddir = Path(args.destination_directory)
+            dest_file = ddir.joinpath("userdata.zip")
             zfile = udata.zipfile()
-            dest_file = dest_dir.joinpath(zfile.name)
             shutil.copy(zfile, dest_file)
             print(f"{dest_file.absolute()} saved!")
 
