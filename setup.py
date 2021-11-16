@@ -19,7 +19,7 @@ setup(
     extras_require={
         "ansible": [
             "ansible-runner==2.0.3",
-            "ansible==4.7.0",
+            "ansible==4.8.0",
         ],
     },
 )
