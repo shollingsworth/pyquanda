@@ -18,7 +18,7 @@ setup(
     install_requires=REQS,
     extras_require={
         "ansible": [
-            "ansible-runner==2.0.2",
+            "ansible-runner==2.0.3",
             "ansible==4.7.0",
         ],
     },
